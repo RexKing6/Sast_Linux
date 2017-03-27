@@ -15,12 +15,14 @@
 <meta property="og:description" content="简介之前在CSDN写过几篇博客，但是一直觉得界面不够简洁，写博客的时候不太爽，想自己搭个人博客写，趁这个机会接触了hexo，记录下来。PS: 以下过程是以Windows系统，用Mac OS的同学可以参考20分钟教你使用hexo搭建github博客。
 安装下载 git 和 Node.js 并执行安装
 安装hexoNPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常">
-<meta property="og:updated_time" content="2017-03-27T13:53:57.508Z">
+<meta property="og:image" content="http://yoursite.com/onh78q2s5.bkt.clouddn.com/images/hexo_1.png">
+<meta property="og:updated_time" content="2017-03-27T14:49:15.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建github技术博客">
 <meta name="twitter:description" content="简介之前在CSDN写过几篇博客，但是一直觉得界面不够简洁，写博客的时候不太爽，想自己搭个人博客写，趁这个机会接触了hexo，记录下来。PS: 以下过程是以Windows系统，用Mac OS的同学可以参考20分钟教你使用hexo搭建github博客。
 安装下载 git 和 Node.js 并执行安装
 安装hexoNPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常">
+<meta name="twitter:image" content="http://yoursite.com/onh78q2s5.bkt.clouddn.com/images/hexo_1.png">
   
     <link rel="alternate" href="/atom.xml" title="青" type="application/atom+xml">
   
@@ -60,7 +62,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -105,12 +107,23 @@
 </ul>
 <p>由于新版的Node.js已经集成了npm，所以之前npm也一并安装好了。Windows我比较喜欢用PowerShell，包含了一些Linux的命令，也可以用vim。<br>然后使用npm安装hexo：</p>
 <pre><code>npm install -g hexo
-</code></pre><p>安装过程中我是出现了两个</p>
+</code></pre><p>安装过程中我是出现了一个warning：This package is no longer maintained，暂时可以无视。</p>
+<h3 id="创建hexo文件并安装依赖包"><a href="#创建hexo文件并安装依赖包" class="headerlink" title="创建hexo文件并安装依赖包"></a>创建hexo文件并安装依赖包</h3><p>安装完成后，在该文件夹内执行以下命令，将在当前目录建立网站所需要的所有文件</p>
+<pre><code>hexo init
+</code></pre><p>看到：</p>
+<pre><code>INFO    Start blogging with Hexo!
+</code></pre><p>说明建立完成，执行以下命令，安装所需依赖：</p>
+<pre><code>npm install
+</code></pre><h3 id="本地浏览"><a href="#本地浏览" class="headerlink" title="本地浏览"></a>本地浏览</h3><pre><code>hexo generate
+hexo server
+</code></pre><p>这里hexo默认用的是本地的4000端口，我第一次开启后发现访问不了，想了一下应该是已经被占用了，查询了一下：<br><img src="onh78q2s5.bkt.clouddn.com/images/hexo_1.png" alt="查询福昕"><br>是福昕，所以手动改下端口：</p>
+<pre><code>hexo s -p 5000
+</code></pre><p>这里的s是server的缩写，下面会给出常用的缩写，在上面的命令执行后，浏览器访问：127.0.0.1:5000，可以看到本地的</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/hexo搭建github技术博客/" data-id="cj0s70efe0000zgv3u6ygrje1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/hexo搭建github技术博客/" data-id="cj0s8c0pu0000jov3j71l5fj2" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -123,7 +136,7 @@
   
   
     <a href="/2017/03/15/重回博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">重回博客</div>
     </a>
   
@@ -138,7 +151,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Categorieën</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li></ul>
     </div>
@@ -148,7 +161,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li></ul>
     </div>
@@ -167,7 +180,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
     </div>
@@ -177,7 +190,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
@@ -201,7 +214,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
+      &copy; 2017 Runqing Chen<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
