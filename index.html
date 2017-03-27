@@ -106,14 +106,17 @@
 <pre><code>npm install
 </code></pre><h3 id="本地浏览"><a href="#本地浏览" class="headerlink" title="本地浏览"></a>本地浏览</h3><pre><code>hexo generate
 hexo server
-</code></pre><p>这里hexo默认用的是本地的4000端口，我第一次开启后发现访问不了，想了一下应该是已经被占用了，查询了一下：<br><img src="/img/hexo_1.png" alt="查询福昕"><br>是福昕，所以手动改下端口：</p>
+</code></pre><p>这里hexo默认用的是本地的4000端口，我第一次开启后发现访问不了，想了一下应该是已经被占用了，查询：</p>
+<pre><code>netstat -aon | grep 4000
+tasklist | grep 上条命令结果最后的PID
+</code></pre><p><img src="/2017/03/27/hexo搭建github技术博客/hexo_1.png" alt="查询福昕"><br>是福昕，所以手动改下端口：</p>
 <pre><code>hexo s -p 5000
-</code></pre><p>这里的s是server的缩写，下面会给出常用的缩写，在上面的命令执行后，浏览器访问：127.0.0.1:5000，可以看到本地的</p>
+</code></pre><p>这里的s是server的缩写，下面会给出常用的缩写，在上面的命令执行后，浏览器访问：127.0.0.1:5000，可以看到本地的博客已经搭建起来了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/27/hexo搭建github技术博客/" data-id="cj0s9429e0000rcv3pj9yjwsf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/27/hexo搭建github技术博客/" data-id="cj0sr3bid0001igv3mrszbmfs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -156,7 +159,7 @@ hexo server
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/15/重回博客/" data-id="cj0s9429i0001rcv3qequil7w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/15/重回博客/" data-id="cj0sr3bi80000igv3o69bsxaf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li></ul>
