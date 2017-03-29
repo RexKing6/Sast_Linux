@@ -151,6 +151,35 @@ tasklist | grep 上条命令结果最后的PID
     </item>
     
     <item>
+      <title>南京拓界笔试+一面</title>
+      <link>http://yoursite.com/2017/03/16/%E5%8D%97%E4%BA%AC%E6%8B%93%E7%95%8C%E7%AC%94%E8%AF%95-%E4%B8%80%E9%9D%A2/</link>
+      <guid>http://yoursite.com/2017/03/16/%E5%8D%97%E4%BA%AC%E6%8B%93%E7%95%8C%E7%AC%94%E8%AF%95-%E4%B8%80%E9%9D%A2/</guid>
+      <pubDate>Thu, 16 Mar 2017 11:24:56 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;孝陵卫那里的路真不好，公交走起来都噼里啪啦听不清报站的声音。&lt;/p&gt;
+&lt;p&gt;今天去了拓界。&lt;/p&gt;
+&lt;p&gt;前天面完阿里，他们电话就打了过来，说在智联看到我简历，想约面试，本来以为是去面试的，没想到还要笔试。&lt;/p&gt;
+&lt;p&gt;他们公司是做信息取证的，大概就是帮政府在罪犯的存储设
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>孝陵卫那里的路真不好，公交走起来都噼里啪啦听不清报站的声音。</p>
+<p>今天去了拓界。</p>
+<p>前天面完阿里，他们电话就打了过来，说在智联看到我简历，想约面试，本来以为是去面试的，没想到还要笔试。</p>
+<p>他们公司是做信息取证的，大概就是帮政府在罪犯的存储设备中找到证据。</p>
+<p>研发岗位主要是C++和Java，web开发的岗位貌似很少，可能也因为这样，没有运维岗吧。</p>
+<p>因为我主要方向是运维开发和Python开发，再向大数据方面靠，这样方向有点对不上了。 </p>
+<p>笔试题很简单，唔……应该说太简单了，就比二级难了那么一丢丢吧，很多我了解到的C++开发中的东西都没有考到，包括在面试中也没有问到。</p>
+<p>面试官问到的大概有Windows API，就说了下大二下做的输入输出框，提了下回调函数之类的，然后是指针和引用的差别，这个在好多地方看到过，就说了。</p>
+<p>然后是链表和数组的差别，最后是双向链表的插入，感觉都好基础的说，基本都答出来了……</p>
+<p>总之，他们说三天内会有消息，可能还有复试……但是方向不对，就有点不想去了…… </p>
+]]></content:encoded>
+      
+      <comments>http://yoursite.com/2017/03/16/%E5%8D%97%E4%BA%AC%E6%8B%93%E7%95%8C%E7%AC%94%E8%AF%95-%E4%B8%80%E9%9D%A2/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>阿里一面</title>
       <link>http://yoursite.com/2017/03/15/%E9%98%BF%E9%87%8C%E4%B8%80%E9%9D%A2/</link>
       <guid>http://yoursite.com/2017/03/15/%E9%98%BF%E9%87%8C%E4%B8%80%E9%9D%A2/</guid>
@@ -191,27 +220,6 @@ tasklist | grep 上条命令结果最后的PID
 ]]></content:encoded>
       
       <comments>http://yoursite.com/2017/03/15/%E9%98%BF%E9%87%8C%E4%B8%80%E9%9D%A2/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>重回博客</title>
-      <link>http://yoursite.com/2017/03/15/%E9%87%8D%E5%9B%9E%E5%8D%9A%E5%AE%A2/</link>
-      <guid>http://yoursite.com/2017/03/15/%E9%87%8D%E5%9B%9E%E5%8D%9A%E5%AE%A2/</guid>
-      <pubDate>Tue, 14 Mar 2017 23:47:25 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;之前是有写过技术博客的，但是写了几次之后，感觉自己写的东西很渣，不能看。&lt;/p&gt;
-&lt;p&gt;前段时间开始找实习，要总结复习自己两年多学的东西并开始复习，但是自己本地作记录的几个知识面的位置有些找不到了，加上阿里一面很糟糕，所以打算回来写博客，及时记录，及时反省，及时补救。&lt;/p
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>之前是有写过技术博客的，但是写了几次之后，感觉自己写的东西很渣，不能看。</p>
-<p>前段时间开始找实习，要总结复习自己两年多学的东西并开始复习，但是自己本地作记录的几个知识面的位置有些找不到了，加上阿里一面很糟糕，所以打算回来写博客，及时记录，及时反省，及时补救。</p>
-<p>很多时候遇到问题去找答案后，就跟着照做了几个步骤，回头就忘了，这时候写博客记录下来是比较好的，因为作为博客写了出来，就会抱着一种不能误人子弟的想法，而且对知识的扩展也会去了解学习。</p>
-<p>然后CSDN的博客感觉不够简洁，就自己用hexo搭了个github博客出来。</p>
-]]></content:encoded>
-      
-      <comments>http://yoursite.com/2017/03/15/%E9%87%8D%E5%9B%9E%E5%8D%9A%E5%AE%A2/#disqus_thread</comments>
     </item>
     
   </channel>
