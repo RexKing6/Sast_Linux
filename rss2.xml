@@ -151,6 +151,49 @@ tasklist | grep 上条命令结果最后的PID
     </item>
     
     <item>
+      <title>阿里一面</title>
+      <link>http://yoursite.com/2017/03/15/%E9%98%BF%E9%87%8C%E4%B8%80%E9%9D%A2/</link>
+      <guid>http://yoursite.com/2017/03/15/%E9%98%BF%E9%87%8C%E4%B8%80%E9%9D%A2/</guid>
+      <pubDate>Wed, 15 Mar 2017 00:01:16 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;昨天下午两点半，阿里一面，也算是人生第一次面试。&lt;/p&gt;
+&lt;p&gt;很紧张，看了一上午中午的计算机网络、操作系统和数据结构，结果却是简历面。&lt;/p&gt;
+&lt;p&gt;开头让我除了简历上的东西还有什么想说的，结果我却说了爱好是三国杀、打球、骑车，事后觉得自己很蠢。&lt;/p&gt;
+&lt;p&gt;然后问的是
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>昨天下午两点半，阿里一面，也算是人生第一次面试。</p>
+<p>很紧张，看了一上午中午的计算机网络、操作系统和数据结构，结果却是简历面。</p>
+<p>开头让我除了简历上的东西还有什么想说的，结果我却说了爱好是三国杀、打球、骑车，事后觉得自己很蠢。</p>
+<p>然后问的是我的网站，网站确实很low，自从大二暑假写了Linux组的授课内容放上去之后就没动过，上学期写的新闻网站也应该部署上去的，后来面试官对这个貌似有点失望。目前想边搭建自己的个人博客边部署那个网站，寒假打完美赛之后的时间太荒废了。</p>
+<p>之后是问新闻跟踪的网站，主要是新闻的来源，还有针对的用户，对没能访问到有点失望，大约都是我自己在空说的，忘了告诉面试官源码在GitHub上有……</p>
+<p>之后是物体识别的项目，面试官对这方面好像也有点了解，抓了一个点问倒我了，就是用OpenCV读取摄像头进来的东西之后，图像怎么转化成特征，这个确实目前还没考虑到，得去问问老师，目前还在用matlab做实验，研究算法。</p>
+<p>之后是一道题目，先考的bash shell，题目是这样的：</p>
+<pre><code>评测题目: 有一个文件 urllist，每一行都是一个 url，有重复的
+汇总输出：两列，第一列是 url，第二列是 url 出现的次数，两列 \t 分割，按照次数从大到小排序
+</code></pre><p>看完题目其实很简单，之前也有接触过，就是用sort、uniq和awk，sort和uniq还好，用法比较简单，但是awk却是很久没用了，不太熟悉，总共花了十五分钟才写完。</p>
+<pre><code>cat urllist | sort | uniq -c | awk -vOFS=&quot;\t&quot; &apos;{print $2,$1}&apos;
+</code></pre><p>在写的过程中很奇怪，面试官看我卡了这么久，也没让我停下不写，后来才明白，原来还有下文，不止一道……</p>
+<p>写出来之后是用Python实现相同的功能，嗨呀当时学了python的基础语法之后就上手Django，没写过这种东西嘛，一下子就卡住了。这是后来补上的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">f = open(&apos;urllist&apos;)</div><div class="line">line = f.readline()</div><div class="line">lines = &#123;&#125;;</div><div class="line">while line:</div><div class="line">    line = line[:-1]</div><div class="line">    if lines.has_key(line):</div><div class="line">        lines[line]+=1</div><div class="line">    else:</div><div class="line">        lines[line]=1</div><div class="line">    line = f.readline()</div><div class="line">f.close()</div><div class="line">linee = sorted(lines.iteritems(),key=lambda d:d[1],reverse=True)</div><div class="line">for i in linee:</div><div class="line">    print(&quot;%s\t%d&quot; %(i[0],i[1]))</div></pre></td></tr></table></figure>
+<p>面试官就叫停了，然后我问了他我之后不知道是想运维开发这方面还是python后台开发这方面，面试官人好好，叫我不用纠结，这两个方面是有交集的，倒是让我考虑大方向，比如大数据、虚拟化之类的。</p>
+<p>这次表现也问了面试官：</p>
+<p>“唔……中规中矩吧，代码能力差了一点，因为你写在简历上的东西一定会被面试官关注到的。”这算是委婉地挂了吧。 </p>
+<p>反思： </p>
+<ul>
+<li>因为简历上写的熟悉bash shell和python，但是这段时间基本没碰过，都在看面经……是得花点时间练一练了； </li>
+<li>然后是自己的个人网站，这方面目前决定先搭建自己的博客上去，到时候这边的博客也有可能会搬过去，虽然也没有几篇……之后再部署上学期的新闻网站上去； </li>
+<li>之后是物体识别那方面，目前还是在算法验证阶段，是时候抓紧时间用opencv了； </li>
+</ul>
+<p>最后还有美团最近的3.21笔试<br>上面的python代码，我研究下，就补上去。<br>加油，要相信记己！</p>
+]]></content:encoded>
+      
+      <comments>http://yoursite.com/2017/03/15/%E9%98%BF%E9%87%8C%E4%B8%80%E9%9D%A2/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>重回博客</title>
       <link>http://yoursite.com/2017/03/15/%E9%87%8D%E5%9B%9E%E5%8D%9A%E5%AE%A2/</link>
       <guid>http://yoursite.com/2017/03/15/%E9%87%8D%E5%9B%9E%E5%8D%9A%E5%AE%A2/</guid>
