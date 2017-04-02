@@ -8,8 +8,44 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>活成我心中的样子</description>
-    <pubDate>Tue, 28 Mar 2017 06:55:17 GMT</pubDate>
+    <pubDate>Sat, 01 Apr 2017 03:18:03 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>hexo主题和添加评论、打赏、搜索、阅读量、g等功能</title>
+      <link>http://yoursite.com/2017/03/30/hexo%E4%B8%BB%E9%A2%98%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E3%80%81%E6%89%93%E8%B5%8F%E3%80%81%E6%90%9C%E7%B4%A2%E3%80%81%E9%98%85%E8%AF%BB%E9%87%8F%E7%AD%89%E5%8A%9F%E8%83%BD/</link>
+      <guid>http://yoursite.com/2017/03/30/hexo%E4%B8%BB%E9%A2%98%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E3%80%81%E6%89%93%E8%B5%8F%E3%80%81%E6%90%9C%E7%B4%A2%E3%80%81%E9%98%85%E8%AF%BB%E9%87%8F%E7%AD%89%E5%8A%9F%E8%83%BD/</guid>
+      <pubDate>Thu, 30 Mar 2017 15:09:34 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;以下绝大部分转载于&lt;a href=&quot;http://www.jianshu.com/p/5973c05d7100&quot; target=&quot;_blan
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>以下绝大部分转载于<a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能</a>，原文真是满满的干货，看完学习了许多许多，受益匪浅，在这里感谢下作者，写得太好了，以下是原文加上我自己操作中的一些东西。</p>
+<h2 id="更换Hexo主题"><a href="#更换Hexo主题" class="headerlink" title="更换Hexo主题"></a>更换Hexo主题</h2><p>更换后的主题为NexT，其Github网址为：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> 。首先将NexT的主题源文件下载到本地，使用Git克隆指令如下：</p>
+<pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><p>下载后，复制其中名称为next的文件夹到Hexo的主题目录下，主题目录的路径为：</p>
+<pre><code>Hexo根目录/themes/
+</code></pre><p>然后在Hexo根目录执行<strong>部署Hexo</strong>指令：</p>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre><h2 id="设置NexT的主题模式"><a href="#设置NexT的主题模式" class="headerlink" title="设置NexT的主题模式"></a>设置NexT的主题模式</h2><p>Hexo主题中，有三种不同的模式，通过切换模式，让NexT主题显示不一样的样式。在NexT根目录下有一个同样名称为<code>_config.yml</code><br>，为了区分hexo根目录下的<code>_config.yml</code>，将前者称为主题配置文件，在其中找到<code>scheme</code>属性，如下图所示：</p>
+<p>默认的是Muse模式，我设置的是Mist，在NexT的GitHub主页上展示的是这种模式，很简洁。读者可根据自己的喜好，选择其中一种模式。</p>
+<h2 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h2><p>设置完模式后，读者们会发现，尽管首页显示的是所有文章的列表，但是每一篇文章都显示了所有内容，这样感觉看起来不舒服，这时候可以启用预览摘要模式，在主题配置文件中找到<code>auto_excerpt</code>属性，将<code>enable</code>设置为<code>true</code> ，将<code>length</code>设置为想要预览到的字数，默认是150，如下图所示：</p>
+<p>设置方面的修改完成之后，最好都重新clean-&gt;generate-&gt;deploy一下。</p>
+<h2 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h2><p>NexT目前出到5.1.0版本，功能模块已经相当的丰富。NexT主题集成了评论系统，只需要设置相关的属性即可实现功能，其目前支持多说、Disqus、Facebook评论、Hyper评论、网页云跟帖等。这里我们使用的是另一款名为友言的评论系统，它也是NexT已经集成好的，可以直接拿来用的。下面对其操作进行讲解：</p>
+<p>在这里不得不感叹下NexT的精妙，可供使用者修改的地方非常多，修改添加的时候又特别方便，添加的时候只要去掉注释就好了。</p>
+<h2 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h2><p>打赏是读者对笔者支持的最大动力，作为经常写博客的笔者来说，打赏功能如果在自己的博客中出现，那真的是求之不得呀（虽然基本不会有人来打赏）！而NexT正好集成了打赏的功能，其实现的思路是放上收款二维码，让读者扫码后支付。笔者添加了微信支付和支付宝支付，所以以此为例：</p>
+<h3 id="获取微信收款二维码"><a href="#获取微信收款二维码" class="headerlink" title="获取微信收款二维码"></a>获取微信收款二维码</h3><p>微信二维码的获取途径还是比较容易的，按照这个教程即可实现，读者们也可以预先设置收款的金额。</p>
+<h3 id="获取支付宝收款二维码"><a href="#获取支付宝收款二维码" class="headerlink" title="获取支付宝收款二维码"></a>获取支付宝收款二维码</h3><p>笔者上网查了很多关于支付宝收款二维码的相关信息，奈何得到的结果不是版本不一致就是商家认证，找了好久，终于找到一个符合要求的教程，读者们可别被“商家平台”这几个字吓到了，普通用户一样可以开通，且不需要相关证件的认证，读者们可根据这个教程获得自己的支付宝收款二维码。</p>
+<h3 id="添加二维码图片资源"><a href="#添加二维码图片资源" class="headerlink" title="添加二维码图片资源"></a>添加二维码图片资源</h3><p>得到二维码图片资源后，读者们可将二维码图片放到NexT根目录/source/images/文件夹下。</p>
+<h3 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h3><p>找到主题配置文件，在其最后添加打赏的配置信息:</p>
+]]></content:encoded>
+      
+      <comments>http://yoursite.com/2017/03/30/hexo%E4%B8%BB%E9%A2%98%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E3%80%81%E6%89%93%E8%B5%8F%E3%80%81%E6%90%9C%E7%B4%A2%E3%80%81%E9%98%85%E8%AF%BB%E9%87%8F%E7%AD%89%E5%8A%9F%E8%83%BD/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>hexo绑定阿里云二级域名</title>
@@ -218,35 +254,6 @@ tasklist | grep 上条命令结果最后的PID
 ]]></content:encoded>
       
       <comments>http://yoursite.com/2017/03/18/Diffie-Hellman%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>南京拓界笔试+一面</title>
-      <link>http://yoursite.com/2017/03/16/%E5%8D%97%E4%BA%AC%E6%8B%93%E7%95%8C%E7%AC%94%E8%AF%95-%E4%B8%80%E9%9D%A2/</link>
-      <guid>http://yoursite.com/2017/03/16/%E5%8D%97%E4%BA%AC%E6%8B%93%E7%95%8C%E7%AC%94%E8%AF%95-%E4%B8%80%E9%9D%A2/</guid>
-      <pubDate>Thu, 16 Mar 2017 11:24:56 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;孝陵卫那里的路真不好，公交走起来都噼里啪啦听不清报站的声音。&lt;/p&gt;
-&lt;p&gt;今天去了拓界。&lt;/p&gt;
-&lt;p&gt;前天面完阿里，他们电话就打了过来，说在智联看到我简历，想约面试，本来以为是去面试的，没想到还要笔试。&lt;/p&gt;
-&lt;p&gt;他们公司是做信息取证的，大概就是帮政府在罪犯的存储设
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>孝陵卫那里的路真不好，公交走起来都噼里啪啦听不清报站的声音。</p>
-<p>今天去了拓界。</p>
-<p>前天面完阿里，他们电话就打了过来，说在智联看到我简历，想约面试，本来以为是去面试的，没想到还要笔试。</p>
-<p>他们公司是做信息取证的，大概就是帮政府在罪犯的存储设备中找到证据。</p>
-<p>研发岗位主要是C++和Java，web开发的岗位貌似很少，可能也因为这样，没有运维岗吧。</p>
-<p>因为我主要方向是运维开发和Python开发，再向大数据方面靠，这样方向有点对不上了。 </p>
-<p>笔试题很简单，唔……应该说太简单了，就比二级难了那么一丢丢吧，很多我了解到的C++开发中的东西都没有考到，包括在面试中也没有问到。</p>
-<p>面试官问到的大概有Windows API，就说了下大二下做的输入输出框，提了下回调函数之类的，然后是指针和引用的差别，这个在好多地方看到过，就说了。</p>
-<p>然后是链表和数组的差别，最后是双向链表的插入，感觉都好基础的说，基本都答出来了……</p>
-<p>总之，他们说三天内会有消息，可能还有复试……但是方向不对，就有点不想去了…… </p>
-]]></content:encoded>
-      
-      <comments>http://yoursite.com/2017/03/16/%E5%8D%97%E4%BA%AC%E6%8B%93%E7%95%8C%E7%AC%94%E8%AF%95-%E4%B8%80%E9%9D%A2/#disqus_thread</comments>
     </item>
     
   </channel>
