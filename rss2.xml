@@ -8,8 +8,20 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>活成我心中的样子</description>
-    <pubDate>Tue, 04 Apr 2017 12:32:22 GMT</pubDate>
+    <pubDate>Tue, 04 Apr 2017 14:45:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Socks5与VPN在原理上的异同</title>
+      <link>http://yoursite.com/2017/04/04/Socks5%E4%B8%8EVPN%E5%9C%A8%E5%8E%9F%E7%90%86%E4%B8%8A%E7%9A%84%E5%BC%82%E5%90%8C/</link>
+      <guid>http://yoursite.com/2017/04/04/Socks5%E4%B8%8EVPN%E5%9C%A8%E5%8E%9F%E7%90%86%E4%B8%8A%E7%9A%84%E5%BC%82%E5%90%8C/</guid>
+      <pubDate>Tue, 04 Apr 2017 14:45:32 GMT</pubDate>
+      <description>
+      
+      </description>
+      
+      <comments>http://yoursite.com/2017/04/04/Socks5%E4%B8%8EVPN%E5%9C%A8%E5%8E%9F%E7%90%86%E4%B8%8A%E7%9A%84%E5%BC%82%E5%90%8C/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Linux Socket编程</title>
@@ -401,49 +413,6 @@ hexo d
 ]]></content:encoded>
       
       <comments>http://yoursite.com/2017/03/28/hexo%E7%BB%91%E5%AE%9A%E9%98%BF%E9%87%8C%E4%BA%91%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>hexo的图片以及图床</title>
-      <link>http://yoursite.com/2017/03/28/hexo%E7%9A%84%E5%9B%BE%E7%89%87%E4%BB%A5%E5%8F%8A%E5%9B%BE%E5%BA%8A/</link>
-      <guid>http://yoursite.com/2017/03/28/hexo%E7%9A%84%E5%9B%BE%E7%89%87%E4%BB%A5%E5%8F%8A%E5%9B%BE%E5%BA%8A/</guid>
-      <pubDate>Tue, 28 Mar 2017 00:59:50 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;hexo要插入图片一般有两种方式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;存储在本地的网站文件夹&lt;/li&gt;
-&lt;li&gt;使用图床，插入时用外链url即可&lt;/
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>hexo要插入图片一般有两种方式：</p>
-<ul>
-<li>存储在本地的网站文件夹</li>
-<li>使用图床，插入时用外链url即可</li>
-</ul>
-<h2 id="本地"><a href="#本地" class="headerlink" title="本地"></a>本地</h2><p>先说第一种，hexo本地和上传到GitHub后的目录结构不相同，所以这路径是比较难编写的。要想最后部署后能看到图片，在本地写markdown时，图片就会显示失败。有没有什么两全其美的方法呢？有。</p>
-<h2 id="hexo-asset-image"><a href="#hexo-asset-image" class="headerlink" title="hexo-asset-image"></a>hexo-asset-image</h2><p>先将 _config.yml 的post_asset_folder改为true，然后运行以下命令：</p>
-<pre><code>npm install https://github.com/CodeFalling/hexo-asset-image --save
-</code></pre><p>安装完成后，新建文章后，将会是这种结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo搭建github技术博客</div><div class="line">├── hexo_1.png</div><div class="line">└── hexo_2.png</div><div class="line">hexo搭建github技术博客.md</div></pre></td></tr></table></figure>
-<p>这样的目录结构（目录名和文章名一致），只要使用 <code>![图片名称](hexo搭建github技术博客/hexo_1.png)</code>就可以插入图片。</p>
-<p>同时，生成的 html 是</p>
-<pre><code>&lt;img src=&quot;/2017/03/27/hexo搭建github技术博客/hexo_1.png&quot; alt=&quot;查询福昕&quot;&gt;
-</code></pre><p>而不是之前丑陋的相对链接。</p>
-<p>另外，值得一提的是，这个插件对于 CodeFalling/hexo-renderer-org 同样有效。以上的内容参考 <a href="http://www.tuicool.com/articles/umEBVfI" target="_blank" rel="external">在 hexo 中无痛使用本地图片</a> 。</p>
-<h2 id="七牛云图床"><a href="#七牛云图床" class="headerlink" title="七牛云图床"></a>七牛云图床</h2><p>看网上很多人都推荐七牛云，我自己没用过别的，就直接用了。每个月有10G免费，我的博客应该没人来看，是够用的。</p>
-<p>注册，新建存储空间</p>
-<p><img src="/2017/03/28/hexo的图片以及图床/hexo_1.png" alt="新建存储空间"></p>
-<p>然后是镜像存储，什么是镜像存储呢？</p>
-<p>镜像存储是指你网站的数据在存储在自己服务器上的情况下，额外使用七牛云存储作为镜像服务器，让网站的用户每次访问的时候都从七牛云存储上读取。如果七牛云存储上没有用户需要读取的数据，则七牛的服务器会从源站拉取资源，然后再返回给网站的用户。</p>
-<p>网站上的图片，CSS，JS 这些文件一般都是不太修改，使用镜像存储把这些静态文件资源镜像到七牛的服务器，网站用户访问的时候就直接从七牛的服务器上读取数据，这样可以<strong>大大降低网站服务器读取数据的压力和大大提高网站的速度</strong>，并且并不影响博客的原来使用体验，原来怎么上传图片还是继续在网站中怎么操作即可。</p>
-<p><img src="/2017/03/28/hexo的图片以及图床/hexo_2.png" alt="镜像存储"></p>
-<p>镜像源填自己的网站，这样设定之后，每次更新网站的内容后，就可以通过<strong>七牛云给的三级域名+相同路径</strong>访问到自己网站的相同内容（我的是<code>onh78q2s5.bkt.clouddn.com</code>）。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>关于图片的使用方法，就写到这里，对七牛云这家公司突然心生敬佩，刚好在春招，投一发实习简历去！</p>
-]]></content:encoded>
-      
-      <comments>http://yoursite.com/2017/03/28/hexo%E7%9A%84%E5%9B%BE%E7%89%87%E4%BB%A5%E5%8F%8A%E5%9B%BE%E5%BA%8A/#disqus_thread</comments>
     </item>
     
   </channel>
