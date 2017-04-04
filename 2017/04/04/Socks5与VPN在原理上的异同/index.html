@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="网络原理," />
 
 
 
@@ -89,16 +89,22 @@
 
 
 
-<meta name="description" content="活成我心中的样子">
+<meta name="description" content="简介之前一直是用vpn科学上网的，前几天买了个国外VPS搭建了Shadowsocks。都是翻墙的工具，就想了解了解其中不同的地方，看到了这篇文章：Socks5与VPN在原理上的异同，很有收获，转了过来，很感谢作者。
+Socks5原理介绍Socket套接字介绍Socket套接字实际上是基于TCP/IP的一组应用程序接口，应用层的程序通过调用Socket套接字来实现网络间的进程通信。
+Socks5原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Socks5与VPN在原理上的异同">
 <meta property="og:url" content="http://yoursite.com/2017/04/04/Socks5与VPN在原理上的异同/index.html">
 <meta property="og:site_name" content="RexKing6's Note">
-<meta property="og:description" content="活成我心中的样子">
-<meta property="og:updated_time" content="2017-04-04T14:45:32.941Z">
+<meta property="og:description" content="简介之前一直是用vpn科学上网的，前几天买了个国外VPS搭建了Shadowsocks。都是翻墙的工具，就想了解了解其中不同的地方，看到了这篇文章：Socks5与VPN在原理上的异同，很有收获，转了过来，很感谢作者。
+Socks5原理介绍Socket套接字介绍Socket套接字实际上是基于TCP/IP的一组应用程序接口，应用层的程序通过调用Socket套接字来实现网络间的进程通信。
+Socks5原理">
+<meta property="og:updated_time" content="2017-04-04T15:05:53.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Socks5与VPN在原理上的异同">
-<meta name="twitter:description" content="活成我心中的样子">
+<meta name="twitter:description" content="简介之前一直是用vpn科学上网的，前几天买了个国外VPS搭建了Shadowsocks。都是翻墙的工具，就想了解了解其中不同的地方，看到了这篇文章：Socks5与VPN在原理上的异同，很有收获，转了过来，很感谢作者。
+Socks5原理介绍Socket套接字介绍Socket套接字实际上是基于TCP/IP的一组应用程序接口，应用层的程序通过调用Socket套接字来实现网络间的进程通信。
+Socks5原理">
 
 
 
@@ -346,6 +352,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络原理/" itemprop="url" rel="index">
+                    <span itemprop="name">网络原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -382,7 +410,34 @@
       
 
       
-        
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>之前一直是用vpn科学上网的，前几天买了个国外VPS搭建了Shadowsocks。都是翻墙的工具，就想了解了解其中不同的地方，看到了这篇文章：<a href="http://www.tennfy.com/3412.html" target="_blank" rel="external">Socks5与VPN在原理上的异同</a>，很有收获，转了过来，很感谢作者。</p>
+<h2 id="Socks5原理介绍"><a href="#Socks5原理介绍" class="headerlink" title="Socks5原理介绍"></a>Socks5原理介绍</h2><h3 id="Socket套接字介绍"><a href="#Socket套接字介绍" class="headerlink" title="Socket套接字介绍"></a>Socket套接字介绍</h3><p>Socket套接字实际上是基于TCP/IP的一组应用程序接口，应用层的程序通过调用Socket套接字来实现网络间的进程通信。</p>
+<h3 id="Socks5原理介绍-1"><a href="#Socks5原理介绍-1" class="headerlink" title="Socks5原理介绍"></a>Socks5原理介绍</h3><p>Socks5是一个代理协议，位于传输层(TCP/UDP等)与应用层之间。Socks软件包组成为如下结构：</p>
+<p>Socks库：安装于客户端。为Socket库的替代品，所有使用Socks的程序都必须将Socket库函数调用更改为Socks库函数调用。需要注意的是，Socks库函数仍然需要调用Socket库函数，Socks仅仅是在其上做了安全验证。</p>
+<p>Sockd守护程序：安装于服务器，接收并处理来自客户端的<code>CONNECT</code>，<code>BIND</code>及<code>UDP associate</code>请求。以<code>CONNECT</code>请求为例，其工作流程为：</p>
+<ul>
+<li>客户端向代理服务器发出请求信息，用以协商版本和认证方法</li>
+<li>代理服务器应答，将选择的方法发送给客户端</li>
+<li>客户和代理服务器进入由选定认证方法所决定的子协商过程</li>
+<li>子协商过程结束后，客户端发送请求信息，其中明了目标服务器的IP地址和端口</li>
+<li>代理服务器验证客户端身份，验证通过后会与目标服务器连接</li>
+<li>代理服务器向客户端返回连接信息</li>
+<li>若连接完成，则代理服务器开始作为中转站中转数据</li>
+</ul>
+<p>Socks5协议同时支持TCP及UDP代理，它主要工作与会话层，因此与上层的协议无关。但是，它无法做到全局代理。</p>
+<h2 id="VPN原理介绍"><a href="#VPN原理介绍" class="headerlink" title="VPN原理介绍"></a>VPN原理介绍</h2><p>VPN，Virtual Private Network（虚拟专用网络），被定义为通过一个公用网络（通常是因特网）建立一个临时的、安全的连接，是一条穿过公用网络的安全、稳定的隧道。VPN有很多种实现方式，常见的有PPTP，L2TP ,L2TP over IPSEC等等。</p>
+<p>以OSI 模型参照标准，不同的VPN术可以在不同的OSI协议层实现。如下表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">VPN在OSI中的层次       VPN实现技术 </div><div class="line">应用层                 SSL VPN </div><div class="line">会话层                 Socks5 VPN </div><div class="line">网络层                 IPSec VPN </div><div class="line">数据链路层              PPTP及L2TP</div></pre></td></tr></table></figure>
+<h3 id="隧道技术"><a href="#隧道技术" class="headerlink" title="隧道技术"></a>隧道技术</h3><p>隧道技术的基本过程是在源局域网与公网的接口处将数据(可以是OSI七层模型中的数据链路层或网络层数据)作为负载封装在一种可以在公网上传输的数据格式中，在目的局域网与公网的接口处将数据解封装，取出负载。被封装的数据包在互联网上传递时所经过的逻辑路径被称为“隧道”。</p>
+<h3 id="PPTP-VPN技术"><a href="#PPTP-VPN技术" class="headerlink" title="PPTP VPN技术"></a>PPTP VPN技术</h3><p>PPTP（点到点隧道协议）是由PPTP论坛开发的点到点的安全隧道协议，为使用电话上网的用户提供安全VPN业务，1996年成为IETF草案。PPTP是PPP协议的一种扩展，提供了在IP网上建立多协议的安全VPN的通信方式，远端用户能够通过任何支持PPTP的ISP访问企业的专用网络。</p>
+<p>PPTP使用一个TCP连接对隧道进行维护，使用通用路由封装（GRE）技术把数据封装成PPP数据桢通过隧道传送。可以对封装PPP桢中的负载数据进行加密或压缩。<br>下边简单描述PPTP 过程中涉及的封装和解封步骤。</p>
+<p>封装：<br>1.数据封装于 IP (或 IPX 和 NetBEUI )封包中。<br>2.该 IP (或 IPX 和 NetBEUI )封包封装在 PPP 帧中。<br>3.该 PPP 帧封装在 GRE 帧中（并加密）。<br>4.该 GRE 帧封装在 IP 封包中。</p>
+<p>解封：<br>1.移除IP 包头。<br>2.移除GRE 包头(解密过程)。GRE负载中是一个PPP帧。<br>3.移除PPP 包头。<br>4.将该IP(或IPX和NetBEUI)封包路由到其最终的目的地。</p>
+<p>MPPE将通过由MS-CHAP、MS-CHAP v2或EAP-TLS身份验证过程所生成的加密密钥对PPP帧进行加密。为对PPP帧中所包含的有效数据进行加密，虚拟专用网络客户端必须使用MS-CHAP、MS-CHAP v2或EAP-TLS身份验证协议。PPTP将利用底层PPP加密功能并直接对原先经过加密的PPP帧进行封装。</p>
+<p>PPTP协议将控制包与数据包分开，控制包采用TCP控制，客户端连接到VPN服务器TCP1723端口，用于控制和管理VPN隧道的功能；数据包部分先封装在PPP协议中，然后封装到GRE V2协议中，最后封装到IP协议中传送。</p>
+<p>可以看出来，VPN技术主要应用于IP层及以下，因此不依赖与具体的应用，所以可以实现全局代理。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然这篇博客说得有点简单了，但是重要的点都点出来了，也说得很清楚，很感谢作者。</p>
+
       
     </div>
 
@@ -429,6 +484,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络原理/" rel="tag"># 网络原理</a>
+          
+        </div>
       
 
       
@@ -496,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -608,6 +678,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socks5原理介绍"><span class="nav-number">2.</span> <span class="nav-text">Socks5原理介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Socket套接字介绍"><span class="nav-number">2.1.</span> <span class="nav-text">Socket套接字介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Socks5原理介绍-1"><span class="nav-number">2.2.</span> <span class="nav-text">Socks5原理介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPN原理介绍"><span class="nav-number">3.</span> <span class="nav-text">VPN原理介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隧道技术"><span class="nav-number">3.1.</span> <span class="nav-text">隧道技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPTP-VPN技术"><span class="nav-number">3.2.</span> <span class="nav-text">PPTP VPN技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
