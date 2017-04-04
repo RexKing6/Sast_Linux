@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>活成我心中的样子</description>
-    <pubDate>Mon, 03 Apr 2017 15:19:09 GMT</pubDate>
+    <pubDate>Tue, 04 Apr 2017 00:35:40 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -71,7 +71,7 @@ chmod +x ./kcptun.sh
 <p>服务器就填服务器的IP，远程端口是填Shadowsocks的服务端口，加密方法就填Shandowsocks设置的加密方法。</p>
 <p>配置完成之后，测试一下能否正常联网，如果可以的话，再配置KCP协议。</p>
 <p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_10.png" alt="连接成功"></p>
-<p>在新版的Shadowsocks安卓客户端，Kcptun是作为插件来安卓的，所以我们得下个<a href="https://github.com/shadowsocks/kcptun-android/releases" target="_blank" rel="external">Kcptun插件</a>，下载完安装，可以看到配置文件中最下面的插件有了Kcptun：</p>
+<p>在新版的Shadowsocks安卓客户端，Kcptun是作为插件来安装的，所以我们得下个<a href="https://github.com/shadowsocks/kcptun-android/releases" target="_blank" rel="external">Kcptun插件</a>，下载完安装，可以看到配置文件中最下面的插件有了Kcptun：</p>
 <p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_11.png" alt="Kcptun插件"></p>
 <p>接下来是参数的设置，可以看到服务器Kcptun的配置信息：</p>
 <p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_12.png" alt="Kcptun服务端信息"></p>
