@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>活成我心中的样子</description>
-    <pubDate>Tue, 04 Apr 2017 12:31:15 GMT</pubDate>
+    <pubDate>Tue, 04 Apr 2017 12:32:22 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -60,7 +60,7 @@
 <h3 id="socket-函数"><a href="#socket-函数" class="headerlink" title="socket()函数"></a>socket()函数</h3><pre><code>int socket(int domain, int type, int protocol);
 </code></pre><p>socket函数对应于普通文件的打开操作。普通文件的打开操作返回一个文件描述字，而<code>socket()</code>用于创建一个socket描述符（socket descriptor），它唯一标识一个socket。这个socket描述字跟文件描述字一样，后续的操作都有用到它，把它作为参数，通过它来进行一些读写操作。</p>
 <p>正如可以给<code>fopen()</code>的传入不同参数值，以打开不同的文件。创建socket的时候，也可以指定不同的参数创建不同的socket描述符，socket函数的三个参数分别为：</p>
-<p><code>domain</code>：即协议域，又称为协议族（family）。常用的协议族有<code>AF_INET</code>、<code>AF_INET6</code>、<code>AF_LOCAL</code>（或称<code>AF_UNIX</code>，Unix域socket）、<code>AF_ROUTE</code>等等。协议族决定了socket的地址类型，在通信中必须采用对应的地址，如<code>AF_INET</code>决定了要用ipv4地址（32位的）与端口号（16位的）的组合、<code>AF_UNIX</code>决定了要用一个绝对路径名作为地址。<br><code>type</code>：指定socket类型。常用的socket类型有：<br><code>SOCK_STREAM</code>、<code>SOCK_DGRAM</code>、<code>SOCK_RAW</code>、<code>SOCK_PACKET</code>、<code>SOCK_SEQPACKET</code>等等。<br><code>protocol</code>：顾名思义，就是指定协议。常用的协议有<code>IPPROTO_TCP</code>、<code>IPPTOTO_UDP</code>、<code>IPPROTO_SCTP</code>、<code>IPPROTO_TIPC</code>等，它们分别对应TCP传输协议、UDP传输协议、STCP传输协议、TIPC传输协议。<br>注意：并不是上面的type和protocol可以随意组合的，如<code>SOCK_STREAM</code>不可以跟<code>IPPROTO_UDP</code>组合。当<code>protocol</code>为0时，会自动选择type类型对应的默认协议。</p>
+<p><code>domain</code>：即协议域，又称为协议族（family）。常用的协议族有<code>AF_INET</code>、<code>AF_INET6</code>、<code>AF_LOCAL</code>（或称<code>AF_UNIX</code>，Unix域socket）、<code>AF_ROUTE</code>等等。协议族决定了socket的地址类型，在通信中必须采用对应的地址，如<code>AF_INET</code>决定了要用ipv4地址（32位的）与端口号（16位的）的组合、<code>AF_UNIX</code>决定了要用一个绝对路径名作为地址。<br><code>type</code>：指定socket类型。常用的socket类型有：<br><code>SOCK_STREAM</code>、<code>SOCK_DGRAM</code>、<code>SOCK_RAW</code>、<code>SOCK_PACKET</code>、<code>SOCK_SEQPACKET</code>等等。<br><code>protocol</code>：顾名思义，就是指定协议。常用的协议有：<br><code>IPPROTO_TCP</code>、<code>IPPTOTO_UDP</code>、<code>IPPROTO_SCTP</code>、<code>IPPROTO_TIPC</code>等，它们分别对应TCP传输协议、UDP传输协议、STCP传输协议、TIPC传输协议。<br>注意：并不是上面的type和protocol可以随意组合的，如<code>SOCK_STREAM</code>不可以跟<code>IPPROTO_UDP</code>组合。当<code>protocol</code>为0时，会自动选择type类型对应的默认协议。</p>
 <p>当我们调用<code>socket()</code>创建一个socket时，返回的socket描述字它存在于协议族<code>(address family, AF_XXX)</code>空间中，但没有一个具体的地址。如果想要给它赋值一个地址，就必须调用<code>bind()</code>函数，否则就当调用<code>connect()</code>、<code>listen()</code>时系统会自动随机分配一个端口。</p>
 <h3 id="bind-函数"><a href="#bind-函数" class="headerlink" title="bind()函数"></a>bind()函数</h3><p>正如上面所说bind()函数把一个地址族中的特定地址赋给socket。例如对应<code>AF_INET</code>、<code>AF_INET6</code>就是把一个ipv4或ipv6地址和端口号组合赋给socket。</p>
 <pre><code>int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
