@@ -8,8 +8,278 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>活成我心中的样子</description>
-    <pubDate>Wed, 05 Apr 2017 12:33:23 GMT</pubDate>
+    <pubDate>Wed, 12 Apr 2017 15:21:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>c查缺补漏</title>
+      <link>http://yoursite.com/2017/04/08/c%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</link>
+      <guid>http://yoursite.com/2017/04/08/c%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</guid>
+      <pubDate>Sat, 08 Apr 2017 08:48:48 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;因为最近做的笔试编程题，一般都用的c++/python，一用到的时候便发现有些东西还是忘记了，所以重新翻书，温故。&lt;/p&gt;
+&lt;h2 id=&quot;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>因为最近做的笔试编程题，一般都用的c++/python，一用到的时候便发现有些东西还是忘记了，所以重新翻书，温故。</p>
+<h2 id="十进制化N进制"><a href="#十进制化N进制" class="headerlink" title="十进制化N进制"></a>十进制化N进制</h2><h2 id="c的数据结构"><a href="#c的数据结构" class="headerlink" title="c的数据结构"></a>c的数据结构</h2><h3 id="取值范围"><a href="#取值范围" class="headerlink" title="取值范围"></a>取值范围</h3><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>所占位数</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>8</td>
+<td>-2<sup>7</sup>~2<sup>7</sup>-1</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>8</td>
+<td>0~2<sup>8</sup>-1</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16</td>
+<td>-2<sup>15</sup>~2<sup>15</sup>-1</td>
+</tr>
+<tr>
+<td>unsigned short</td>
+<td>16</td>
+<td>0~2<sup>16</sup>-1</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32</td>
+<td>-2<sup>31</sup>-1~2<sup>31</sup>-1</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>32</td>
+<td>0~2<sup>32</sup>-1</td>
+</tr>
+<tr>
+<td>long</td>
+<td>32</td>
+<td>-2<sup>31</sup>~2<sup>31</sup>-1</td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td>32</td>
+<td>0~2<sup>32</sup>-1</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>64</td>
+<td>-2<sup>63</sup>~2<sup>63</sup>-1</td>
+</tr>
+<tr>
+<td>unsigned long long</td>
+<td>64</td>
+<td>0~2<sup>64</sup>-1</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32</td>
+<td>3.40282e+038</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64</td>
+<td>1.79769e+308</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>96</td>
+<td>1.79769e+308</td>
+</tr>
+</tbody>
+</table>
+<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><h4 id="scanf"><a href="#scanf" class="headerlink" title="scanf"></a><strong>scanf</strong></h4><table>
+<thead>
+<tr>
+<th>格式转换说明符</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d或%i</td>
+<td>十进制整数</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>八进制整数</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>十六进制整数</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>1个字符</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%f或%e</td>
+<td>float型，%f为小数形式，%e为指数形式</td>
+</tr>
+<tr>
+<td>%lf</td>
+<td>double型</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>1个百分号%</td>
+</tr>
+<tr>
+<td>格式修饰符</td>
+<td></td>
+</tr>
+<tr>
+<td>l</td>
+<td>加在d、i、o、x、u之前用于long型</td>
+</tr>
+<tr>
+<td></td>
+<td>加在f、e之前用于double型</td>
+</tr>
+<tr>
+<td>L</td>
+<td>加在f、e之前用于long double型</td>
+</tr>
+<tr>
+<td>h</td>
+<td>加在d、i、o、x之前用于short型</td>
+</tr>
+<tr>
+<td>域宽m</td>
+<td>指定输入数据的宽度(列数)，系统自动按此宽度截取输入数据</td>
+</tr>
+<tr>
+<td>*</td>
+<td>忽略该输入</td>
+</tr>
+</tbody>
+</table>
+<h4 id="printf"><a href="#printf" class="headerlink" title="printf"></a><strong>printf</strong></h4><table>
+<thead>
+<tr>
+<th>格式转换说明符</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d或%i</td>
+<td>十进制整数</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>无符号的十进制整数</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>八进制整数，不输出前导符0</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>十六进制整数，不输出前导符0x</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>1个字符</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>float型和double型，默认6位小数</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>指数形式</td>
+</tr>
+<tr>
+<td>%g</td>
+<td>自动选取f或e格式中输出宽度较小的一种使用，且不输出无意义的0</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>1个百分号%</td>
+</tr>
+<tr>
+<td>格式修饰符</td>
+<td></td>
+</tr>
+<tr>
+<td>l</td>
+<td>加在d、i、o、x、u之前用于long型</td>
+</tr>
+<tr>
+<td>L</td>
+<td>加在f、e、g之前用于long double型</td>
+</tr>
+<tr>
+<td>m.n</td>
+<td>空格补齐，m包括小数点，n为小数后位数</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-表示左对齐，没有表示右对齐</td>
+</tr>
+</tbody>
+</table>
+]]></content:encoded>
+      
+      <comments>http://yoursite.com/2017/04/08/c%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>数据结构查缺补漏</title>
+      <link>http://yoursite.com/2017/04/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</link>
+      <guid>http://yoursite.com/2017/04/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</guid>
+      <pubDate>Sat, 08 Apr 2017 08:47:43 GMT</pubDate>
+      <description>
+      
+      </description>
+      
+      <comments>http://yoursite.com/2017/04/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Python查缺补漏</title>
+      <link>http://yoursite.com/2017/04/08/Python%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</link>
+      <guid>http://yoursite.com/2017/04/08/Python%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</guid>
+      <pubDate>Sat, 08 Apr 2017 08:47:18 GMT</pubDate>
+      <description>
+      
+      </description>
+      
+      <comments>http://yoursite.com/2017/04/08/Python%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Linux运维查缺补漏</title>
+      <link>http://yoursite.com/2017/04/08/Linux%E8%BF%90%E7%BB%B4%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</link>
+      <guid>http://yoursite.com/2017/04/08/Linux%E8%BF%90%E7%BB%B4%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</guid>
+      <pubDate>Sat, 08 Apr 2017 08:47:03 GMT</pubDate>
+      <description>
+      
+      </description>
+      
+      <comments>http://yoursite.com/2017/04/08/Linux%E8%BF%90%E7%BB%B4%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>当你在浏览器地址栏输入一个URL后回车，将会发生的事情？</title>
@@ -289,415 +559,6 @@
 ]]></content:encoded>
       
       <comments>http://yoursite.com/2017/04/05/%E5%BD%93%E4%BD%A0%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%90%8E%E5%9B%9E%E8%BD%A6%EF%BC%8C%E5%B0%86%E4%BC%9A%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%9F/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Socks5与VPN在原理上的异同</title>
-      <link>http://yoursite.com/2017/04/04/Socks5%E4%B8%8EVPN%E5%9C%A8%E5%8E%9F%E7%90%86%E4%B8%8A%E7%9A%84%E5%BC%82%E5%90%8C/</link>
-      <guid>http://yoursite.com/2017/04/04/Socks5%E4%B8%8EVPN%E5%9C%A8%E5%8E%9F%E7%90%86%E4%B8%8A%E7%9A%84%E5%BC%82%E5%90%8C/</guid>
-      <pubDate>Tue, 04 Apr 2017 14:45:32 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;之前一直是用vpn科学上网的，前几天买了个国外VPS搭建了Shadowsocks。都是翻墙的工具，就想了解了解其中不同的地方，看到了这篇文章
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>之前一直是用vpn科学上网的，前几天买了个国外VPS搭建了Shadowsocks。都是翻墙的工具，就想了解了解其中不同的地方，看到了这篇文章：<a href="http://www.tennfy.com/3412.html" target="_blank" rel="external">Socks5与VPN在原理上的异同</a>，很有收获，转了过来，很感谢作者。</p>
-<h2 id="Socks5原理介绍"><a href="#Socks5原理介绍" class="headerlink" title="Socks5原理介绍"></a>Socks5原理介绍</h2><h3 id="Socket套接字介绍"><a href="#Socket套接字介绍" class="headerlink" title="Socket套接字介绍"></a>Socket套接字介绍</h3><p>Socket套接字实际上是基于TCP/IP的一组应用程序接口，应用层的程序通过调用Socket套接字来实现网络间的进程通信。</p>
-<h3 id="Socks5原理介绍-1"><a href="#Socks5原理介绍-1" class="headerlink" title="Socks5原理介绍"></a>Socks5原理介绍</h3><p>Socks5是一个代理协议，位于传输层(TCP/UDP等)与应用层之间。Socks软件包组成为如下结构：</p>
-<p>Socks库：安装于客户端。为Socket库的替代品，所有使用Socks的程序都必须将Socket库函数调用更改为Socks库函数调用。需要注意的是，Socks库函数仍然需要调用Socket库函数，Socks仅仅是在其上做了安全验证。</p>
-<p>Sockd守护程序：安装于服务器，接收并处理来自客户端的<code>CONNECT</code>，<code>BIND</code>及<code>UDP associate</code>请求。以<code>CONNECT</code>请求为例，其工作流程为：</p>
-<ul>
-<li>客户端向代理服务器发出请求信息，用以协商版本和认证方法</li>
-<li>代理服务器应答，将选择的方法发送给客户端</li>
-<li>客户和代理服务器进入由选定认证方法所决定的子协商过程</li>
-<li>子协商过程结束后，客户端发送请求信息，其中明了目标服务器的IP地址和端口</li>
-<li>代理服务器验证客户端身份，验证通过后会与目标服务器连接</li>
-<li>代理服务器向客户端返回连接信息</li>
-<li>若连接完成，则代理服务器开始作为中转站中转数据</li>
-</ul>
-<p>Socks5协议同时支持TCP及UDP代理，它主要工作与会话层，因此与上层的协议无关。但是，它无法做到全局代理。</p>
-<h2 id="VPN原理介绍"><a href="#VPN原理介绍" class="headerlink" title="VPN原理介绍"></a>VPN原理介绍</h2><p>VPN，Virtual Private Network（虚拟专用网络），被定义为通过一个公用网络（通常是因特网）建立一个临时的、安全的连接，是一条穿过公用网络的安全、稳定的隧道。VPN有很多种实现方式，常见的有PPTP，L2TP ,L2TP over IPSEC等等。</p>
-<p>以OSI 模型参照标准，不同的VPN术可以在不同的OSI协议层实现。如下表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">VPN在OSI中的层次       VPN实现技术 </div><div class="line">应用层                 SSL VPN </div><div class="line">会话层                 Socks5 VPN </div><div class="line">网络层                 IPSec VPN </div><div class="line">数据链路层              PPTP及L2TP</div></pre></td></tr></table></figure>
-<h3 id="隧道技术"><a href="#隧道技术" class="headerlink" title="隧道技术"></a>隧道技术</h3><p>隧道技术的基本过程是在源局域网与公网的接口处将数据(可以是OSI七层模型中的数据链路层或网络层数据)作为负载封装在一种可以在公网上传输的数据格式中，在目的局域网与公网的接口处将数据解封装，取出负载。被封装的数据包在互联网上传递时所经过的逻辑路径被称为“隧道”。</p>
-<h3 id="PPTP-VPN技术"><a href="#PPTP-VPN技术" class="headerlink" title="PPTP VPN技术"></a>PPTP VPN技术</h3><p>PPTP（点到点隧道协议）是由PPTP论坛开发的点到点的安全隧道协议，为使用电话上网的用户提供安全VPN业务，1996年成为IETF草案。PPTP是PPP协议的一种扩展，提供了在IP网上建立多协议的安全VPN的通信方式，远端用户能够通过任何支持PPTP的ISP访问企业的专用网络。</p>
-<p>PPTP使用一个TCP连接对隧道进行维护，使用通用路由封装（GRE）技术把数据封装成PPP数据桢通过隧道传送。可以对封装PPP桢中的负载数据进行加密或压缩。<br>下边简单描述PPTP 过程中涉及的封装和解封步骤。</p>
-<p>封装：<br>1.数据封装于 IP (或 IPX 和 NetBEUI )封包中。<br>2.该 IP (或 IPX 和 NetBEUI )封包封装在 PPP 帧中。<br>3.该 PPP 帧封装在 GRE 帧中（并加密）。<br>4.该 GRE 帧封装在 IP 封包中。</p>
-<p>解封：<br>1.移除IP 包头。<br>2.移除GRE 包头(解密过程)。GRE负载中是一个PPP帧。<br>3.移除PPP 包头。<br>4.将该IP(或IPX和NetBEUI)封包路由到其最终的目的地。</p>
-<p>MPPE将通过由MS-CHAP、MS-CHAP v2或EAP-TLS身份验证过程所生成的加密密钥对PPP帧进行加密。为对PPP帧中所包含的有效数据进行加密，虚拟专用网络客户端必须使用MS-CHAP、MS-CHAP v2或EAP-TLS身份验证协议。PPTP将利用底层PPP加密功能并直接对原先经过加密的PPP帧进行封装。</p>
-<p>PPTP协议将控制包与数据包分开，控制包采用TCP控制，客户端连接到VPN服务器TCP1723端口，用于控制和管理VPN隧道的功能；数据包部分先封装在PPP协议中，然后封装到GRE V2协议中，最后封装到IP协议中传送。</p>
-<p>可以看出来，VPN技术主要应用于IP层及以下，因此不依赖与具体的应用，所以可以实现全局代理。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然这篇博客说得有点简单了，但是重要的点都点出来了，也说得很清楚，很感谢作者。</p>
-]]></content:encoded>
-      
-      <comments>http://yoursite.com/2017/04/04/Socks5%E4%B8%8EVPN%E5%9C%A8%E5%8E%9F%E7%90%86%E4%B8%8A%E7%9A%84%E5%BC%82%E5%90%8C/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Linux Socket编程</title>
-      <link>http://yoursite.com/2017/04/04/Linux-Socket%E7%BC%96%E7%A8%8B/</link>
-      <guid>http://yoursite.com/2017/04/04/Linux-Socket%E7%BC%96%E7%A8%8B/</guid>
-      <pubDate>Tue, 04 Apr 2017 06:02:27 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;本文转载&lt;a href=&quot;http://www.cnblogs.com/skynet/&quot; target=&quot;_blank&quot; rel=&quot;exte
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本文转载<a href="http://www.cnblogs.com/skynet/" target="_blank" rel="external">Linux Socket编程（不限Linux）</a>，作者：吴秦，写得很好，又具体又全面，有例子，看完很有收获，就转了过来。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>“一切皆Socket！”</p>
-<p>话虽些许夸张，但是事实也是，现在的网络编程几乎都是用的socket。</p>
-<p>——有感于实际编程和开源项目研究。</p>
-<p>我们深谙信息交流的价值，那网络中进程之间如何通信，如我们每天打开浏览器浏览网页时，浏览器的进程怎么与web服务器通信的？当你用QQ聊天时，QQ进程怎么与服务器或你好友所在的QQ进程通信？这些都得靠socket？那什么是socket？socket的类型有哪些？还有socket的基本函数，这些都是本文想介绍的。本文的主要内容如下：</p>
-<ul>
-<li>网络中进程之间如何通信？</li>
-<li>Socket是什么？</li>
-<li>socket的基本操作<ul>
-<li>socket()函数</li>
-<li>bind()函数</li>
-<li>listen()、connect()函数</li>
-<li>accept()函数</li>
-<li>read()、write()函数等</li>
-<li>close()函数</li>
-</ul>
-</li>
-<li>socket中TCP的三次握手建立连接详解</li>
-<li>socket中TCP的四次握手释放连接详解</li>
-<li>一个例子（实践一下）</li>
-</ul>
-<h2 id="网络中进程之间如何通信？"><a href="#网络中进程之间如何通信？" class="headerlink" title="网络中进程之间如何通信？"></a>网络中进程之间如何通信？</h2><p>本地的进程间通信（IPC）有很多种方式，但可以总结为下面4类：</p>
-<ul>
-<li>消息传递（管道、FIFO、消息队列）</li>
-<li>同步（互斥量、条件变量、读写锁、文件和写记录锁、信号量）</li>
-<li>共享内存（匿名的和具名的）</li>
-<li>远程过程调用（Solaris门和Sun RPC）</li>
-</ul>
-<p>但这些都不是本文的主题！我们要讨论的是网络中进程之间如何通信？首要解决的问题是如何唯一标识一个进程，否则通信无从谈起！在本地可以通过进程PID来唯一标识一个进程，但是在网络中这是行不通的。其实TCP/IP协议族已经帮我们解决了这个问题，<strong>网络层的ip地址</strong>可以唯一标识网络中的主机，而<strong>传输层的协议+端口</strong>可以唯一标识主机中的应用程序（进程）。这样利用三元组（<strong>ip地址，协议，端口</strong>）就可以标识网络的进程了，网络中的进程通信就可以利用这个标志与其它进程进行交互。</p>
-<p>使用TCP/IP协议的应用程序通常采用应用编程接口：UNIX  BSD的套接字（socket）和UNIX System V的TLI（已经被淘汰），来实现网络进程之间的通信。就目前而言，几乎所有的应用程序都是采用socket，而现在又是网络时代，网络中进程通信是无处不在，这就是我为什么说“一切皆socket”。</p>
-<h2 id="什么是Socket？"><a href="#什么是Socket？" class="headerlink" title="什么是Socket？"></a>什么是Socket？</h2><p>上面我们已经知道网络中的进程是通过socket来通信的，那什么是socket呢？socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，都可以用“打开open –&gt; 读写write/read –&gt; 关闭close”模式来操作。我的理解就是Socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭），这些函数我们在后面进行介绍。</p>
-<blockquote>
-<p><strong>socket一词的起源</strong>：在组网领域的首次使用是在1970年2月12日发布的文献IETF RFC33中发现的，撰写者为Stephen Carr、Steve Crocker和Vint Cerf。根据美国计算机历史博物馆的记载，Croker写道：“命名空间的元素都可称为套接字接口。一个套接字接口构成一个连接的一端，而一个连接可完全由一对套接字接口规定。”计算机历史博物馆补充道：“这比BSD的套接字接口定义早了大约12年。”</p>
-</blockquote>
-<h2 id="socket的基本操作"><a href="#socket的基本操作" class="headerlink" title="socket的基本操作"></a>socket的基本操作</h2><p>既然socket是“open—write/read—close”模式的一种实现，那么socket就提供了这些操作对应的函数接口。下面以TCP为例，介绍几个基本的socket接口函数。</p>
-<h3 id="socket-函数"><a href="#socket-函数" class="headerlink" title="socket()函数"></a>socket()函数</h3><pre><code>int socket(int domain, int type, int protocol);
-</code></pre><p>socket函数对应于普通文件的打开操作。普通文件的打开操作返回一个文件描述字，而<code>socket()</code>用于创建一个socket描述符（socket descriptor），它唯一标识一个socket。这个socket描述字跟文件描述字一样，后续的操作都有用到它，把它作为参数，通过它来进行一些读写操作。</p>
-<p>正如可以给<code>fopen()</code>的传入不同参数值，以打开不同的文件。创建socket的时候，也可以指定不同的参数创建不同的socket描述符，socket函数的三个参数分别为：</p>
-<p><code>domain</code>：即协议域，又称为协议族（family）。常用的协议族有<code>AF_INET</code>、<code>AF_INET6</code>、<code>AF_LOCAL</code>（或称<code>AF_UNIX</code>，Unix域socket）、<code>AF_ROUTE</code>等等。协议族决定了socket的地址类型，在通信中必须采用对应的地址，如<code>AF_INET</code>决定了要用ipv4地址（32位的）与端口号（16位的）的组合、<code>AF_UNIX</code>决定了要用一个绝对路径名作为地址。<br><code>type</code>：指定socket类型。常用的socket类型有：<br><code>SOCK_STREAM</code>、<code>SOCK_DGRAM</code>、<code>SOCK_RAW</code>、<code>SOCK_PACKET</code>、<code>SOCK_SEQPACKET</code>等等。<br><code>protocol</code>：顾名思义，就是指定协议。常用的协议有：<br><code>IPPROTO_TCP</code>、<code>IPPTOTO_UDP</code>、<code>IPPROTO_SCTP</code>、<code>IPPROTO_TIPC</code>等，它们分别对应TCP传输协议、UDP传输协议、STCP传输协议、TIPC传输协议。<br>注意：并不是上面的type和protocol可以随意组合的，如<code>SOCK_STREAM</code>不可以跟<code>IPPROTO_UDP</code>组合。当<code>protocol</code>为0时，会自动选择type类型对应的默认协议。</p>
-<p>当我们调用<code>socket()</code>创建一个socket时，返回的socket描述字它存在于协议族<code>(address family, AF_XXX)</code>空间中，但没有一个具体的地址。如果想要给它赋值一个地址，就必须调用<code>bind()</code>函数，否则就当调用<code>connect()</code>、<code>listen()</code>时系统会自动随机分配一个端口。</p>
-<h3 id="bind-函数"><a href="#bind-函数" class="headerlink" title="bind()函数"></a>bind()函数</h3><p>正如上面所说bind()函数把一个地址族中的特定地址赋给socket。例如对应<code>AF_INET</code>、<code>AF_INET6</code>就是把一个ipv4或ipv6地址和端口号组合赋给socket。</p>
-<pre><code>int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
-</code></pre><p>函数的三个参数分别为：<br><code>sockfd</code>：即socket描述字，它是通过<code>socket()</code>函数创建了唯一标识一个socket。<code>bind()</code>函数就是将给这个描述字绑定一个名字。<br><code>addr</code>：一个<code>const struct sockaddr *</code>指针，指向要绑定给<code>sockfd</code>的协议地址。这个地址结构根据地址创建socket时的地址协议族的不同而不同，如ipv4对应的是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">struct sockaddr_in &#123;</div><div class="line">    sa_family_t    sin_family; /* address family: AF_INET */</div><div class="line">    in_port_t      sin_port;   /* port in network byte order */</div><div class="line">    struct in_addr sin_addr;   /* internet address */</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/* Internet address. */</div><div class="line">struct in_addr &#123;</div><div class="line">    uint32_t       s_addr;     /* address in network byte order */</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>ipv6对应的是： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">struct sockaddr_in6 &#123; </div><div class="line">    sa_family_t     sin6_family;   /* AF_INET6 */ </div><div class="line">    in_port_t       sin6_port;     /* port number */ </div><div class="line">    uint32_t        sin6_flowinfo; /* IPv6 flow information */ </div><div class="line">    struct in6_addr sin6_addr;     /* IPv6 address */ </div><div class="line">    uint32_t        sin6_scope_id; /* Scope ID (new in 2.4) */ </div><div class="line">&#125;;</div><div class="line"></div><div class="line">struct in6_addr &#123; </div><div class="line">    unsigned char   s6_addr[16];   /* IPv6 address */ </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>Unix域对应的是： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#define UNIX_PATH_MAX    108</div><div class="line"></div><div class="line">struct sockaddr_un &#123; </div><div class="line">    sa_family_t sun_family;               /* AF_UNIX */ </div><div class="line">    char        sun_path[UNIX_PATH_MAX];  /* pathname */ </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><code>addrlen</code>：对应的是地址的长度。</p>
-<p>通常服务器在启动的时候都会绑定一个众所周知的地址（如ip地址+端口号），用于提供服务，客户端就可以通过它来接连服务器；而客户端就不用指定，有系统自动分配一个端口号和自身的ip地址组合。这就是为什么通常服务器端在listen之前会调用<code>bind()</code>，而客户端就不会调用，而是在<code>connect()</code>时由系统随机生成一个。</p>
-<blockquote>
-<p><strong>网络字节序与主机字节序</strong>：<br><strong>主机字节序</strong>就是我们平常说的大端和小端模式：不同的CPU有不同的字节序类型，这些字节序是指整数在内存中保存的顺序，这个叫做主机序。引用标准的Big-Endian和Little-Endian的定义如下：<br>1.Little-Endian就是低位字节排放在内存的低地址端，高位字节排放在内存的高地址端。<br>2.Big-Endian就是高位字节排放在内存的低地址端，低位字节排放在内存的高地址端。<br><strong>网络字节序</strong>：4个字节的32 bit值以下面的次序传输：首先是0～7bit，其次8～15bit，然后16～23bit，最后是24~31bit。这种传输次序称作大端字节序。由于TCP/IP首部中所有的二进制整数在网络中传输时都要求以这种次序，因此它又称作网络字节序。字节序，顾名思义字节的顺序，就是大于一个字节类型的数据在内存中的存放顺序，一个字节的数据没有顺序的问题了。</p>
-</blockquote>
-<p>所以：在将一个地址绑定到socket的时候，请先将主机字节序转换成为网络字节序，而不要假定主机字节序跟网络字节序一样使用的是Big-Endian。由于这个问题曾引发过血案！公司项目代码中由于存在这个问题，导致了很多莫名其妙的问题，所以请谨记对主机字节序不要做任何假定，务必将其转化为网络字节序再赋给socket。</p>
-<h3 id="listen-、connect-函数"><a href="#listen-、connect-函数" class="headerlink" title="listen()、connect()函数"></a>listen()、connect()函数</h3><p>如果作为一个服务器，在调用<code>socket()</code>、<code>bind()</code>之后就会调用<code>listen()</code>来监听这个socket，如果客户端这时调用<code>connect()</code>发出连接请求，服务器端就会接收到这个请求。</p>
-<pre><code>int listen(int sockfd, int backlog);
-int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
-</code></pre><p>listen函数的第一个参数即为要监听的socket描述字，第二个参数为相应socket可以排队的最大连接个数。<code>socket()</code>函数创建的socket默认是一个主动类型的，<code>listen()</code>函数将socket变为被动类型的，等待客户的连接请求。</p>
-<p><code>connect()</code>函数的第一个参数即为客户端的socket描述字，第二参数为服务器的socket地址，第三个参数为socket地址的长度。客户端通过调用connect函数来建立与TCP服务器的连接。</p>
-<h3 id="accept-函数"><a href="#accept-函数" class="headerlink" title="accept()函数"></a>accept()函数</h3><p>TCP服务器端依次调用<code>socket()</code>、<code>bind()</code>、<code>listen()</code>之后，就会监听指定的socket地址了。TCP客户端依次调用<code>socket()</code>、<code>connect()</code>之后就向TCP服务器发送了一个连接请求。TCP服务器监听到这个请求之后，就会调用<code>accept()</code>函数去接收请求，这样连接就建立好了。之后就可以开始网络I/O操作了，即类同于普通文件的读写I/O操作。</p>
-<pre><code>int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
-</code></pre><p><code>accept()</code>函数的第一个参数为服务器的socket描述字，第二个参数为指向<code>struct sockaddr *</code>的指针，用于返回客户端的协议地址，第三个参数为协议地址的长度。如果accpet成功，那么其返回值是由内核自动生成的一个全新的描述字，代表与返回客户的TCP连接。</p>
-<p>注意：accept的第一个参数为服务器的socket描述字，是服务器开始调用<code>socket()</code>函数生成的，称为监听socket描述字；而<code>accept()</code>函数返回的是已连接的socket描述字。一个服务器通常通常仅仅只创建一个监听socket描述字，它在该服务器的生命周期内一直存在。内核为每个由服务器进程接受的客户连接创建了一个已连接socket描述字，当服务器完成了对某个客户的服务，相应的已连接socket描述字就被关闭。</p>
-<h3 id="read-、write-等函数"><a href="#read-、write-等函数" class="headerlink" title="read()、write()等函数"></a>read()、write()等函数</h3><p>万事具备只欠东风，至此服务器与客户已经建立好连接了。可以调用网络I/O进行读写操作了，即实现了网络中不同进程之间的通信，网络I/O操作有下面几组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">read()/write()</div><div class="line">recv()/send()</div><div class="line">readv()/writev()</div><div class="line">recvmsg()/sendmsg()</div><div class="line">recvfrom()/sendto()</div></pre></td></tr></table></figure>
-<p>我推荐使用<code>recvmsg()/sendmsg()</code>函数，这两个函数是最通用的I/O函数，实际上可以把上面的其它函数都替换成这两个函数。它们的声明如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#include &lt;unistd.h&gt;</div><div class="line"></div><div class="line">ssize_t read(int fd, void *buf, size_t count);</div><div class="line">ssize_t write(int fd, const void *buf, size_t count);</div><div class="line"></div><div class="line">#include &lt;sys/types.h&gt;</div><div class="line">#include &lt;sys/socket.h&gt;</div><div class="line"></div><div class="line">ssize_t send(int sockfd, const void *buf, size_t len, int flags);</div><div class="line">ssize_t recv(int sockfd, void *buf, size_t len, int flags);</div><div class="line"></div><div class="line">ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,</div><div class="line">			  const struct sockaddr *dest_addr, socklen_t addrlen);</div><div class="line">ssize_t recvfrom(int sockfd, void *buf, size_t len, int flags,</div><div class="line">				struct sockaddr *src_addr, socklen_t *addrlen);</div><div class="line"></div><div class="line">ssize_t sendmsg(int sockfd, const struct msghdr *msg, int flags);</div><div class="line">ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);</div></pre></td></tr></table></figure>
-<p><code>read()</code>函数是负责从fd中读取内容，当读成功时，<code>read()</code>返回实际所读的字节数，如果返回的值是0表示已经读到文件的结束了，小于0表示出现了错误。如果错误为<code>EINTR</code>说明读是由中断引起的，如果是<code>ECONNREST</code>表示网络连接出了问题。</p>
-<p><code>write()</code>函数将buf中的n bytes字节内容写入文件描述符fd，成功时返回写的字节数。失败时返回-1，并设置<code>errno</code>变量。 在网络程序中，当我们向套接字文件描述符写时有两种可能：</p>
-<ul>
-<li>write的返回值大于0，表示写了部分或者是全部的数据。</li>
-<li>返回的值小于0，此时出现了错误。我们要根据错误类型来处理。如果错误为EINTR表示在写的时候出现了中断错误。如果为EPIPE表示网络连接出现了问题(对方已经关闭了连接)。</li>
-</ul>
-<p>其它的我就不一一介绍这几对I/O函数了，具体参见man文档或者baidu、google，下面的例子中将使用到<code>send()/recv()</code>。</p>
-<h3 id="close-函数"><a href="#close-函数" class="headerlink" title="close()函数"></a>close()函数</h3><p>在服务器与客户端建立连接之后，会进行一些读写操作，完成了读写操作就要关闭相应的socket描述字，好比操作完打开的文件要调用<code>fclose()</code>关闭打开的文件。</p>
-<pre><code>#include &lt;unistd.h&gt;
-int close(int fd);
-</code></pre><p>close一个TCP socket的缺省行为时把该socket标记为以关闭，然后立即返回到调用进程。该描述字不能再由调用进程使用，也就是说不能再作为<code>read()</code>或<code>write()</code>的第一个参数。</p>
-<p>注意：close操作只是使相应socket描述字的引用计数-1，只有当引用计数为0的时候，才会触发TCP客户端向服务器发送终止连接请求。</p>
-<h2 id="socket中TCP的三次握手建立连接详解"><a href="#socket中TCP的三次握手建立连接详解" class="headerlink" title="socket中TCP的三次握手建立连接详解"></a>socket中TCP的三次握手建立连接详解</h2><p>我们知道tcp建立连接要进行“三次握手”，即交换三个分组。大致流程如下：</p>
-<ul>
-<li>客户端向服务器发送一个SYN J</li>
-<li>服务器向客户端响应一个SYN K，并对SYN J进行确认ACK J+1</li>
-<li>客户端再想服务器发一个确认ACK K+1</li>
-</ul>
-<p>只有做完了三次握手，但是这个三次握手发生在socket的那几个函数中呢？请看下图：</p>
-<p><img src="/2017/04/04/Linux-Socket编程/socket_0.png" alt="socket中发送的TCP三次握手"></p>
-<p>从图中可以看出，当客户端调用<code>connect()</code>时，触发了连接请求，向服务器发送了SYN J包，这时<code>connect()</code>进入阻塞状态；服务器监听到连接请求，即收到SYN J包，调用<code>accept()</code>函数接收请求向客户端发送SYN K ，ACK J+1，这时<code>accept()</code>进入阻塞状态；客户端收到服务器的SYN K ，ACK J+1之后，这时<code>connect()</code>返回，并对SYN K进行确认；服务器收到ACK K+1时，<code>0accept()</code>返回，至此三次握手完毕，连接建立。</p>
-<p>总结：客户端的<code>connect()</code>在三次握手的第二次返回，而服务器端的<code>accept()</code>在三次握手的第三次返回。</p>
-<h2 id="socket中TCP的四次握手释放连接详解"><a href="#socket中TCP的四次握手释放连接详解" class="headerlink" title="socket中TCP的四次握手释放连接详解"></a>socket中TCP的四次握手释放连接详解</h2><p>上面介绍了socket中TCP的三次握手建立过程，及其涉及的<code>socket()</code>函数。现在我们介绍socket中的四次握手释放连接的过程，请看下图：</p>
-<p><img src="/2017/04/04/Linux-Socket编程/socket_1.png" alt="socket中发送的TCP四次握手"></p>
-<p>图示过程如下：</p>
-<ul>
-<li>某个应用进程首先调用close主动关闭连接，这时TCP发送一个FIN M；</li>
-<li>另一端接收到FIN M之后，执行被动关闭，对这个FIN进行确认。它的接收也作为文件结束符传递给应用进程，因为FIN的接收意味着应用进程在相应的连接上再也接收不到额外数据；</li>
-<li>一段时间之后，接收到文件结束符的应用进程调用close关闭它的socket。这导致它的TCP也发送一个FIN N；</li>
-<li>接收到这个FIN的源发送端TCP对它进行确认。</li>
-</ul>
-<p>这样每个方向上都有一个FIN和ACK。</p>
-<h2 id="一个例子（实践一下）"><a href="#一个例子（实践一下）" class="headerlink" title="一个例子（实践一下）"></a>一个例子（实践一下）</h2><p>说了这么多了，动手实践一下。下面编写一个简单的服务器、客户端（使用TCP）——服务器端一直监听本机的6666号端口，如果收到连接请求，将接收请求并接收客户端发来的消息；客户端与服务器端建立连接并发送一条消息。</p>
-<p>服务器端代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#include&lt;stdio.h&gt;</div><div class="line">#include&lt;stdlib.h&gt;</div><div class="line">#include&lt;string.h&gt;</div><div class="line">#include&lt;errno.h&gt;</div><div class="line">#include&lt;sys/types.h&gt;</div><div class="line">#include&lt;sys/socket.h&gt;</div><div class="line">#include&lt;netinet/in.h&gt;</div><div class="line"></div><div class="line">#define MAXLINE 4096</div><div class="line"></div><div class="line">int main(int argc, char** argv)</div><div class="line">&#123;</div><div class="line">    int    listenfd, connfd;</div><div class="line">    struct sockaddr_in     servaddr;</div><div class="line">    char    buff[4096];</div><div class="line">    int     n;</div><div class="line"></div><div class="line">    if( (listenfd = socket(AF_INET, SOCK_STREAM, 0)) == -1 )&#123;</div><div class="line">    printf(&quot;create socket error: %s(errno: %d)\n&quot;,strerror(errno),errno);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    memset(&amp;servaddr, 0, sizeof(servaddr));</div><div class="line">    servaddr.sin_family = AF_INET;</div><div class="line">    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);</div><div class="line">    servaddr.sin_port = htons(6666);</div><div class="line"></div><div class="line">    if( bind(listenfd, (struct sockaddr*)&amp;servaddr, sizeof(servaddr)) == -1)&#123;</div><div class="line">    printf(&quot;bind socket error: %s(errno: %d)\n&quot;,strerror(errno),errno);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if( listen(listenfd, 10) == -1)&#123;</div><div class="line">    printf(&quot;listen socket error: %s(errno: %d)\n&quot;,strerror(errno),errno);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printf(&quot;======waiting for client&apos;s request======\n&quot;);</div><div class="line">    while(1)&#123;</div><div class="line">    if( (connfd = accept(listenfd, (struct sockaddr*)NULL, NULL)) == -1)&#123;</div><div class="line">        printf(&quot;accept socket error: %s(errno: %d)&quot;,strerror(errno),errno);</div><div class="line">        continue;</div><div class="line">    &#125;</div><div class="line">    n = recv(connfd, buff, MAXLINE, 0);</div><div class="line">    buff[n] = &apos;\0&apos;;</div><div class="line">    printf(&quot;recv msg from client: %s\n&quot;, buff);</div><div class="line">    close(connfd);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    close(listenfd);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>客户端代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">#include&lt;stdio.h&gt;</div><div class="line">#include&lt;stdlib.h&gt;</div><div class="line">#include&lt;string.h&gt;</div><div class="line">#include&lt;errno.h&gt;</div><div class="line">#include&lt;sys/types.h&gt;</div><div class="line">#include&lt;sys/socket.h&gt;</div><div class="line">#include&lt;netinet/in.h&gt;</div><div class="line"></div><div class="line">#define MAXLINE 4096</div><div class="line"></div><div class="line">int main(int argc, char** argv)</div><div class="line">&#123;</div><div class="line">    int    sockfd, n;</div><div class="line">    char    recvline[4096], sendline[4096];</div><div class="line">    struct sockaddr_in    servaddr;</div><div class="line"></div><div class="line">    if( argc != 2)&#123;</div><div class="line">    printf(&quot;usage: ./client &lt;ipaddress&gt;\n&quot;);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if( (sockfd = socket(AF_INET, SOCK_STREAM, 0)) &lt; 0)&#123;</div><div class="line">    printf(&quot;create socket error: %s(errno: %d)\n&quot;, strerror(errno),errno);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    memset(&amp;servaddr, 0, sizeof(servaddr));</div><div class="line">    servaddr.sin_family = AF_INET;</div><div class="line">    servaddr.sin_port = htons(6666);</div><div class="line">    if( inet_pton(AF_INET, argv[1], &amp;servaddr.sin_addr) &lt;= 0)&#123;</div><div class="line">    printf(&quot;inet_pton error for %s\n&quot;,argv[1]);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if( connect(sockfd, (struct sockaddr*)&amp;servaddr, sizeof(servaddr)) &lt; 0)&#123;</div><div class="line">    printf(&quot;connect error: %s(errno: %d)\n&quot;,strerror(errno),errno);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printf(&quot;send msg to server: \n&quot;);</div><div class="line">    fgets(sendline, 4096, stdin);</div><div class="line">    if( send(sockfd, sendline, strlen(sendline), 0) &lt; 0)</div><div class="line">    &#123;</div><div class="line">    printf(&quot;send msg error: %s(errno: %d)\n&quot;, strerror(errno), errno);</div><div class="line">    exit(0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    close(sockfd);</div><div class="line">    exit(0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当然上面的代码很简单，也有很多缺点，这就只是简单的演示socket的基本函数使用。其实不管有多复杂的网络程序，都使用的这些基本函数。上面的服务器使用的是迭代模式的，即只有处理完一个客户端请求才会去处理下一个客户端的请求，这样的服务器处理能力是很弱的，现实中的服务器都需要有并发处理能力。为了需要并发处理，服务器需要<code>fork()</code>一个新的进程或者线程去处理请求等。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文只是介绍了简单的socket编程，更为复杂的需要自己继续深入。</p>
-]]></content:encoded>
-      
-      <comments>http://yoursite.com/2017/04/04/Linux-Socket%E7%BC%96%E7%A8%8B/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>搭建Shadowsocks并使用</title>
-      <link>http://yoursite.com/2017/04/03/%E6%90%AD%E5%BB%BAShadowsocks%E5%B9%B6%E4%BD%BF%E7%94%A8/</link>
-      <guid>http://yoursite.com/2017/04/03/%E6%90%AD%E5%BB%BAShadowsocks%E5%B9%B6%E4%BD%BF%E7%94%A8/</guid>
-      <pubDate>Mon, 03 Apr 2017 02:04:53 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;之前科学上网用的是VPN，&lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;e
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>之前科学上网用的是VPN，<a href="https://www.greenjsq.me/" target="_blank" rel="external">green</a>的VPN很稳定，速度也快，一个月18元也不算贵，这次搭建Shadowsocks是自己感兴趣，所以尝试搭建了下，写了下来。</p>
-<h2 id="买个VPS"><a href="#买个VPS" class="headerlink" title="买个VPS"></a>买个VPS</h2><p>关于国外VPS买哪一家好，可以看<a href="http://www.laozuo.org/myvps" target="_blank" rel="external">老左博客</a>，介绍很全面详细，我自己选的是<a href="https://www.vultr.com/" target="_blank" rel="external">Vultr</a>，老左里面说的活动好像都过期了。</p>
-<p>注册Vultr账号和<a href="https://www.paypal.com/c2/webapps/mpp/account-selection" target="_blank" rel="external">Paypal</a>账号。<br>PS: 用于付款，不想注册Paypal的话，可以试试搬瓦工，可以用支付宝，具体见老左博客。</p>
-<p>新建实例：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_0.png" alt="Location"></p>
-<p>服务器位置，一般看你自己经常访问的网址主要在哪里。</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_1.png" alt="Type"></p>
-<p>服务器系统一般选CentOS，配置我是选的最低（毕竟穷）。</p>
-<p>这样创建之后一个月2.5刀，有500G流量，够用也不算贵。用Paypal付款成功之后，就可以看到你的VPS。</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_2.png" alt="VPS"></p>
-<h2 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks"></a>安装Shadowsocks</h2><p>使用<a href="http://www.netsarang.com/products/xsh_overview.html" target="_blank" rel="external">Xshell5</a>或者<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank" rel="external">PuTTY</a>连接刚买的VPS，接收密钥，输入用户名<code>root</code>，密码直接复制上面的Password，连接成功。</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_3.png" alt="连接VPS"></p>
-<p>之后输入以下命令：</p>
-<pre><code>wget no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
-chmod +x shadowsocks.sh
-./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
-</code></pre><p>输入完回车可以看到以下这个界面：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_4.png" alt="ss设置"></p>
-<p>设置密码、端口，敲任意键开始安装设置，完成之后将出现以下信息：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_5.png" alt="ss信息"></p>
-<p>到这里，Shadowsocks已经搭建好了，如果想卸载则执行：</p>
-<pre><code>./shadowsocks.sh uninstall
-</code></pre><h2 id="安装Kcptun给Shadowsocks加速"><a href="#安装Kcptun给Shadowsocks加速" class="headerlink" title="安装Kcptun给Shadowsocks加速"></a>安装Kcptun给Shadowsocks加速</h2><p>Kcptun，一个免费的加速工具。它是一个非常简单和快速的，基于 KCP 协议的 UDP 隧道，它可以将 TCP 流转换为 KCP+UDP 流。而 KCP 是一个快速可靠协议，能以比 TCP 浪费10%-20%的带宽的代价，换取平均延迟降低 30%-40%，且最大延迟降低三倍的传输效果。</p>
-<p>安装执行以下命令：</p>
-<pre><code>wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh
-chmod +x ./kcptun.sh
-./kcptun.sh
-</code></pre><p>执行完成，将看到以下界面：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_6.png" alt="Kcptun设置"></p>
-<h3 id="设置Kcptun服务端端口"><a href="#设置Kcptun服务端端口" class="headerlink" title="设置Kcptun服务端端口"></a>设置Kcptun服务端端口</h3><p>请输入一个未被占用的端口，Kcptun 运行时将使用此端口。</p>
-<h3 id="设置加速的-IP"><a href="#设置加速的-IP" class="headerlink" title="设置加速的 IP"></a>设置加速的 IP</h3><p>如果你想加速 Shadowsocks，而 Shadowsocks 就在运行在当前服务器上，直接回车即可。如果 Shadowsocks 运行在其他服务器，请输入服务器的 IP 地址。这也就是说，Kcptun 不仅能加速本地的端口，也能加速远端的端口。</p>
-<h3 id="设置加速的端口"><a href="#设置加速的端口" class="headerlink" title="设置加速的端口"></a>设置加速的端口</h3><p>输入上面Shadowsocks设置的服务端口。</p>
-<h3 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h3><p>不输入的话，有个默认密码<code>it&#39;s a secrect</code>。</p>
-<p>设置完成，安装成功之后，可以看到以下输出信息：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_7.png" alt="Kcptun信息"></p>
-<p>这些信息记得保存下来，待会客户端配置的时候需要用到。</p>
-<p>Kcptun有关命令：</p>
-<pre><code>./kcptun.sh update    #更新
-./kcptun.sh reconfig    #重新配置
-./kcptun.sh uninstall    #卸载
-</code></pre><p>到这里，服务器上的配置就已经完成了，接下来是客户端的配置。</p>
-<h2 id="Shadowsocks-Android"><a href="#Shadowsocks-Android" class="headerlink" title="Shadowsocks-Android"></a>Shadowsocks-Android</h2><p>下载<a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="external">apk客户端</a></p>
-<p>安装，打开影梭，界面：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_8.png" alt="影梭安卓界面"></p>
-<p>新建并设置：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_9.png" alt="影梭安卓设置"></p>
-<p>服务器就填服务器的IP，远程端口是填Shadowsocks的服务端口，加密方法就填Shandowsocks设置的加密方法。</p>
-<p>配置完成之后，测试一下能否正常联网，如果可以的话，再配置KCP协议。</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_10.png" alt="连接成功"></p>
-<p>在新版的Shadowsocks安卓客户端，Kcptun是作为插件来安装的，所以我们得下个<a href="https://github.com/shadowsocks/kcptun-android/releases" target="_blank" rel="external">Kcptun插件</a>，下载完安装，可以看到配置文件中最下面的插件有了Kcptun：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_11.png" alt="Kcptun插件"></p>
-<p>接下来是参数的设置，可以看到服务器Kcptun的配置信息：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_12.png" alt="Kcptun服务端信息"></p>
-<p>然后是手机端的配置：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_13.png" alt="Kcp手机端配置"></p>
-<p>这里的参数是用<code>key=value</code>的格式来配置的。另外，如果这个参数是boolean类型，写了参数就表示<code>true</code>，没写则表示<code>false</code>。可以看到右下角有个问号，点开可以看到一些默认参数，对于那些默认值相同的就可以不写了，对照我的服务端配置：</p>
-<pre><code>sndwnd=512;remoteaddr=45.32.137.118:29900;key=123456;mode=fast2
-</code></pre><p>设置成功后，保存重新连接，可以发现，速度快了很多，不过，相对地，流量也会多走……</p>
-<h2 id="Shadowsocks-Windows"><a href="#Shadowsocks-Windows" class="headerlink" title="Shadowsocks-Windows"></a>Shadowsocks-Windows</h2><p>Windows下，我们总共需要下载三个东西，<a href="https://github.com/xtaci/kcptun/releases" target="_blank" rel="external">Kcptun客户端</a>、<a href="https://github.com/dfdragon/kcptun_gclient/releases" target="_blank" rel="external">Kcptun管理工具</a>、<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">Shadowsocks客户端</a>。这里要注意，Kcptun客户端的版本要跟Kcptun服务端的版本一样，Kcptun服务端的版本如下：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_12.png" alt="Kcptun版本"></p>
-<h3 id="Kcptun配置"><a href="#Kcptun配置" class="headerlink" title="Kcptun配置"></a>Kcptun配置</h3><p>接下来是配置Kcptun管理工具，我之前配置的时候，逻辑一直错误了，今天了解了Kcptun原理，才知道在客户端设置得反过来，Kcptun原理图如下：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_15.png" alt="Kcptun原理"></p>
-<p>可以看到，本地向服务器发送请求后，服务器会向本地发送数据，数据本来通过服务端的Shadowsocks端口发送到本地的Shadowsocks端口，有了Kcptun之后，服务端的数据通过Shadowsocks端口再通过Kcptun端口发送到本地的Kcptun端口，然后再发送到本地的Shadowsocks端口。知道这个原理之后，我们清楚本地要先配置的是Kcptun，打开Kcptun管理工具：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_16.png" alt="Kcptun管理工具"></p>
-<p>把Kcptun客户端按住放进来，右上角的路径已经填好了。本地端口自己填一个就好了，Kcp服务器地址填VPS的服务器IP，端口填Kcptun服务器上的端口，我上面是29900。其他的配置信息按照服务端的配置。</p>
-<h3 id="Shadowsocks配置"><a href="#Shadowsocks配置" class="headerlink" title="Shadowsocks配置"></a>Shadowsocks配置</h3><p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_17.png" alt="Shadowsocks客户端配置"><br>这里的服务器地址写本地<code>127.0.0.1</code>，端口写刚才Kcptun自设的端口<code>10800</code>，密码是Shadowsocks服务端的密码，右下角再填个本地的端口。这个本地的端口，待会要用，数据就是从这个端口出来的。</p>
-<h3 id="Chrome装Proxy-SwitchyOmega插件"><a href="#Chrome装Proxy-SwitchyOmega插件" class="headerlink" title="Chrome装Proxy SwitchyOmega插件"></a>Chrome装Proxy SwitchyOmega插件</h3><p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_18.png" alt="Proxy SwitchyOmega"></p>
-<p>Chrome浏览器安装Proxy SwitchyOmega，之后打开选项：</p>
-<p><img src="/2017/04/03/搭建Shadowsocks并使用/ss_19.png" alt="Proxy SwitchyOmega"></p>
-<p>选个情景模式，把代理协议选为<code>SOCKS5</code>，服务器填本地<code>127.0.0.1</code>，端口就是要填刚才Shadowsocks自设的端口，我的就是10801，填完之后保存，在浏览器选中该情景模式，就可以科学上网了！</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>哎呀，这次搭建Shadowsocks真是几经波折，网上很多教程都写不全，拼起来看也有很多错误。不过，Kcptun加速的效果实在太显著了，youtube看1080P完全不卡的。</p>
-]]></content:encoded>
-      
-      <comments>http://yoursite.com/2017/04/03/%E6%90%AD%E5%BB%BAShadowsocks%E5%B9%B6%E4%BD%BF%E7%94%A8/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>hexo主题和添加评论、打赏、搜索、阅读量等功能</title>
-      <link>http://yoursite.com/2017/03/30/hexo%E4%B8%BB%E9%A2%98%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E3%80%81%E6%89%93%E8%B5%8F%E3%80%81%E6%90%9C%E7%B4%A2%E3%80%81%E9%98%85%E8%AF%BB%E9%87%8F%E7%AD%89%E5%8A%9F%E8%83%BD/</link>
-      <guid>http://yoursite.com/2017/03/30/hexo%E4%B8%BB%E9%A2%98%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E3%80%81%E6%89%93%E8%B5%8F%E3%80%81%E6%90%9C%E7%B4%A2%E3%80%81%E9%98%85%E8%AF%BB%E9%87%8F%E7%AD%89%E5%8A%9F%E8%83%BD/</guid>
-      <pubDate>Thu, 30 Mar 2017 15:09:34 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;以下绝大部分转载于&lt;a href=&quot;http://www.jianshu.com/p/5973c05d7100&quot; target=&quot;_blan
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>以下绝大部分转载于<a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">【干货】2个小时教你hexo博客添加评论、打赏、RSS等功能</a>，原文真是满满的干货，看完学习了许多许多，受益匪浅，在这里感谢下作者，写得太好了，以下是原文加上我自己操作中的一些东西。</p>
-<h2 id="更换Hexo主题"><a href="#更换Hexo主题" class="headerlink" title="更换Hexo主题"></a>更换Hexo主题</h2><p>安装Hexo默认主题是<code>landscape</code>，长这样：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_0.png" alt="landscape"></p>
-<p>更换后的主题为NexT，其Github网址为：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> 。首先将NexT的主题源文件下载到本地，使用Git克隆指令如下：</p>
-<pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre><p>下载后，复制其中名称为next的文件夹到Hexo的主题目录下，主题目录的路径为：</p>
-<pre><code>Hexo根目录/themes/
-</code></pre><p>在Hexo根目录下有一个以<code>_config.yml</code>命名的文件（下称<strong>站点配置文件</strong>），用Vim等文本编辑器打开，在其中找到<code>theme</code>属性，将其由<code>landscape</code>改为<code>next</code>。</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_1.png" alt="配置修改主题"><br>然后在Hexo根目录执行<strong>部署Hexo</strong>指令：</p>
-<pre><code>hexo clean
-hexo g
-hexo d
-</code></pre><p>然后就可以看到修改后的主题：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_2.png" alt="NexT"></p>
-<h2 id="设置NexT的主题模式"><a href="#设置NexT的主题模式" class="headerlink" title="设置NexT的主题模式"></a>设置NexT的主题模式</h2><p>Hexo主题中，有三种不同的模式，通过切换模式，让NexT主题显示不一样的样式。在NexT根目录下有一个同样名称为<code>_config.yml</code>，为了区分hexo根目录下的<code>_config.yml</code>，将前者称为主题配置文件，在其中找到<code>scheme</code>属性，如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_3.png" alt="scheme"></p>
-<p>默认的是<code>Muse</code>模式，我设置的是<code>Mist</code>，在NexT的GitHub主页上展示的是这种模式，很简洁。读者可根据自己的喜好，选择其中一种模式。</p>
-<h2 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h2><p>设置完模式后，读者们会发现，尽管首页显示的是所有文章的列表，但是每一篇文章都显示了所有内容，这样感觉看起来不舒服，这时候可以启用预览摘要模式，在主题配置文件中找到<code>auto_excerpt</code>属性，将<code>enable</code>设置为<code>true</code> ，将<code>length</code>设置为想要预览到的字数，默认是150，如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_4.png" alt="auto_excerpt"></p>
-<p>设置方面的修改完成之后，最好都重新clean-&gt;generate-&gt;deploy一下。</p>
-<h2 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h2><p>NexT目前出到5.1.0版本，功能模块已经相当的丰富。NexT主题集成了评论系统，只需要设置相关的属性即可实现功能，其目前支持多说、Disqus、Facebook评论、Hyper评论、网页云跟帖等。这里我们使用的是另一款名为友言的评论系统，它也是NexT已经集成好的，可以直接拿来用的。打开<a href="http://www.uyan.cc" target="_blank" rel="external">友言官网</a>，注册账号，进入“后台管理”，可以看到自己的用户ID。</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_5.png" alt="用户ID"></p>
-<p>打开<code>hexo根目录/themes/next/_config.yml</code>，我们称这个为“主题配置文件”，找到下面这项：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_6.png" alt="用户ID"></p>
-<p>将刚才的用户ID填进去。在这里不得不感叹下NexT的精妙，可供使用者修改的地方非常多，修改添加的时候又特别方便，添加的时候只要去掉注释就好了。</p>
-<p>效果如下：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_7.png" alt="评论"></p>
-<h2 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h2><p>打赏是读者对笔者支持的最大动力，作为写博客的我来说，打赏功能如果在自己的博客中出现，那真的是求之不得呀（虽然基本不会有人来打赏）！而NexT正好集成了打赏的功能，其实现的思路是放上收款二维码，让读者扫码后支付。原作者添加了微信支付和支付宝支付，所以以此为例：</p>
-<h3 id="获取微信收款二维码"><a href="#获取微信收款二维码" class="headerlink" title="获取微信收款二维码"></a>获取微信收款二维码</h3><p>微信二维码的获取途径还是比较容易的，按照<a href="http://jingyan.baidu.com/article/b907e627b641b646e6891c6b.html" target="_blank" rel="external">这个教程</a>即可实现，读者们也可以预先设置收款的金额。</p>
-<h3 id="获取支付宝收款二维码"><a href="#获取支付宝收款二维码" class="headerlink" title="获取支付宝收款二维码"></a>获取支付宝收款二维码</h3><p>在支付宝首页的“收款”，截图即可得到二维码。</p>
-<h3 id="添加二维码图片资源"><a href="#添加二维码图片资源" class="headerlink" title="添加二维码图片资源"></a>添加二维码图片资源</h3><p>得到二维码图片资源后，读者们可将二维码图片放到<code>NexT根目录/source/images/</code>文件夹下。</p>
-<h3 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h3><p>找到主题配置文件，在其最后添加打赏的配置信息：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_8.png" alt="reward_comment"></p>
-<p>部署后，效果如下：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_9.png" alt="打赏"></p>
-<h2 id="设置侧边栏显示效果"><a href="#设置侧边栏显示效果" class="headerlink" title="设置侧边栏显示效果"></a>设置侧边栏显示效果</h2><p>在主题配置文件中，找到<code>sidebar</code>的<code>display</code>属性，<code>display</code>属性有四种显示模式：分别为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">post    // 默认显示方式</div><div class="line">always  // 一直显示</div><div class="line">hide    // 初始隐藏</div><div class="line">remove  // 移除侧边栏</div></pre></td></tr></table></figure>
-<p>我设置为hide模式，如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_10.png" alt="sidebar"></p>
-<h2 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h2><p>默认情况下，菜单导航栏有首页、归档、关于三个选项，除此之外笔者还添加了分类、标签和关于。在主题配置文件中，找到<code>menu</code>属性，并去掉<code>categories</code>、<code>tags</code>、<code>about</code>的注释，如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_11.png" alt="menu"></p>
-<p>然后在Hexo根目录执行指令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 添加分类页面</div><div class="line">hexo new page &quot;categories&quot;</div><div class="line">// 添加标签页面</div><div class="line">hexo new page “tags”</div><div class="line">// 添加关于页面</div><div class="line">hexo new page &quot;about&quot;</div></pre></td></tr></table></figure>
-<p>执行完上述指令后，在<code>Hexo根目录/source/</code>文件夹下创建三个文件夹，命名分别为：<code>categories</code>、<code>tags</code>、<code>about</code>文件夹，在这些文件夹中分别会创建一个以<code>index</code>命名的Markdown文件，对这三个Markdown文件内容进行修改，使之分别为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: categories</div><div class="line">date: 2017-03-12 22:06:24</div><div class="line">type: &quot;categories&quot;</div><div class="line">---</div><div class="line">---</div><div class="line">title: 标签</div><div class="line">date: 2017-03-12 17:27:16</div><div class="line">type: &quot;tags&quot;</div><div class="line">---</div><div class="line">---</div><div class="line">title: about</div><div class="line">date: 2017-03-12 22:07:26</div><div class="line">type: &quot;about&quot;</div><div class="line">---</div></pre></td></tr></table></figure>
-<p>完成文件的修改，然后部署Hexo即可完成菜单选项的添加。</p>
-<h2 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h2><p>完成了上述菜单选项的添加后，读者们可以看到菜单栏中还有搜索一项，搜索的功能源于第三方服务——Algolia，接下来看看配置的步骤：</p>
-<h3 id="注册Algolia，创建Index"><a href="#注册Algolia，创建Index" class="headerlink" title="注册Algolia，创建Index"></a>注册Algolia，创建Index</h3><p>在Algolia官网注册一个账户，完成账户注册后，创建一个Index，如下图：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_12.png" alt="创建Index"></p>
-<h3 id="安装Hexo-Algolia"><a href="#安装Hexo-Algolia" class="headerlink" title="安装Hexo Algolia"></a>安装Hexo Algolia</h3><p>在Hexo根目录执行如下指令，进行Hexo Algolia的安装：</p>
-<pre><code>npm install --save hexo-algolia
-</code></pre><p>执行完指令后，读者们可能会发现安装失败，或发现安装成功后实现的搜索功能可以搜索但是不可以点击搜索到的文章，这是因为5.1.0版本NexT在<code>package.json</code>文件的配置中存在错误。</p>
-<p>到Hexo的根目录，在其中找到<code>package.json</code>文件，修改其中的<code>hexo-algolia</code>属性值为<code>^0.2.0</code>，本来为<code>^0.1.1</code>，如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_13.png" alt="修改package.json文件"></p>
-<pre><code>&quot;hexo-algolia&quot;: &quot;^0.2.0&quot;
-</code></pre><p>然后再执行上述的安装指令。</p>
-<h3 id="获取Key，修改站点配置"><a href="#获取Key，修改站点配置" class="headerlink" title="获取Key，修改站点配置"></a>获取Key，修改站点配置</h3><p>完成Hexo Algolia后，回到Algolia官网的Dashboard，在左侧导航栏选择API Keys一项，跳转到如下图所示的页面：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_14.png" alt="获取Key"></p>
-<p>基于这个页面的Key，编辑站点配置文件，在文件内容最后添加如下图所示的信息，包括  <code>ApplicationID</code>、<code>Search-Only API Key</code>、<code>Admin API Key</code>和<code>indexName</code>，其中<code>apiKey</code>就是<code>Search-Only API Key</code>：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_15.png" alt="Algolia配置信息"></p>
-<h3 id="更新Index"><a href="#更新Index" class="headerlink" title="更新Index"></a>更新Index</h3><p>配置好Key后，在Hexo根目录执行<code>hexo algolia</code>来更新Index，若出现如下图所示，则表示更新成功：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_16.png" alt="更新Index"></p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_17.png" alt="更新Index"></p>
-<p>若更新失败，则返回上面安装Hexo Algolia的步骤，查看一下hexo-algolia是否安装成功，并核实一下package.json信息是否正确。</p>
-<h3 id="启用配置搜索功能"><a href="#启用配置搜索功能" class="headerlink" title="启用配置搜索功能"></a>启用配置搜索功能</h3><p>修改主题配置文件，在其中找到<code>algolia_search</code>属性，将其<code>enable</code>子属性改为<code>true</code>，然后再看其<code>labels</code>子属性，修改相应的提示文本，使之更加适合自己的风格，属性配置如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_18.png" alt="algolia_search"></p>
-<p>经过上述的操作后，部署Hexo，便可在博客中添加搜索功能，其效果图如下：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_19.png" alt="找到搜索结果"></p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_20.png" alt="未找到搜索结果"></p>
-<h2 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h2><p>阅读次数统计是基于第三方服务——LeanCloud实现的，步骤如下：</p>
-<h3 id="创建LeanCloud账号"><a href="#创建LeanCloud账号" class="headerlink" title="创建LeanCloud账号"></a>创建LeanCloud账号</h3><p>进入<img src="https://leancloud.cn" alt="LeanCloud官网">，注册。</p>
-<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><p>注册并登录LeanCloud后，进入控制台，单击“创建应用”按钮进行应用的创建，输入新应用名称，选择开发版，单击“创建”按钮完成创建，如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_21.png" alt="创建应用"></p>
-<h3 id="创建Class"><a href="#创建Class" class="headerlink" title="创建Class"></a>创建Class</h3><p>进入到刚刚创建的应用中，选择左侧导航栏的“存储”，然后点击“创建Class”，为了与NexT形成配置关系，将Class名称填为<code>Counter</code>，并选择无限制选项，然后单击“创建Class”按钮完成Class的创建，如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_22.png" alt="创建Class"></p>
-<p>点击刚刚创建的Counter，其实质是一张结构表，用来记录文章的浏览量，如下图所示，这里的表可以直接对文章阅读次数进行修改，所以如果想要追求阅读次数的读者可以在表上直接进行修改。</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_23.png" alt="Counter表"></p>
-<h3 id="配置Key"><a href="#配置Key" class="headerlink" title="配置Key"></a>配置Key</h3><p>在左侧导航栏的设置界面，单击“应用Key”可以看到应用的App ID和App Key。</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_24.png" alt="Key"></p>
-<p>复制ID和Key，然后将其配置到主题配置文件中，在文件中找到<code>leancloud_visitors</code>属性，将<code>enable</code>设置为<code>true</code>，然后将之前复制的ID和Key粘贴到相应的属性中。</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_25.png" alt="配置ID和Key"></p>
-<p>至此，阅读次数统计添加完成，其效果图如下所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_26.png" alt="添加阅读次数统计"></p>
-<h2 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h2><h3 id="安装-hexo-generator-feed-插件"><a href="#安装-hexo-generator-feed-插件" class="headerlink" title="安装 hexo-generator-feed 插件"></a>安装 hexo-generator-feed 插件</h3><p>RSS需要有一个Feed链接，而这个链接需要靠<code>hexo-generator-feed</code>插件来生成，所以第一步需要添加插件，在Hexo根目录执行安装指令：</p>
-<pre><code>npm install hexo-generator-feed --save
-</code></pre><h3 id="配置feed信息"><a href="#配置feed信息" class="headerlink" title="配置feed信息"></a>配置feed信息</h3><p>在站点配置文件中追加如下图所示的信息：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_27.png" alt="RSS配置"></p>
-<p>feed属性下的各个子属性的含义借用feed官方英文解释如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">type - Feed type. (atom/rss2)</div><div class="line">path - Feed path. (Default: atom.xml/rss2.xml)</div><div class="line">limit - Maximum number of posts in the feed (Use 0 or false to show all posts)</div><div class="line">hub - URL of the PubSubHubbub hubs (Leave it empty if you don&apos;t use it)</div><div class="line">content - (optional) set to &apos;true&apos; to include the contents of the entire post in the feed.</div></pre></td></tr></table></figure>
-<p>如此这般，RSS功能添加完成，效果图如下：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_28.png" alt="RSS效果"></p>
-<p>单击RSS按钮，跳转如下界面：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_29.png" alt="RSS跳转结果"></p>
-<h2 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h2><p>希望在个人博客中加入自己的邮箱和Github，接下来了解一下社交链接如何添加：</p>
-<h3 id="添加链接"><a href="#添加链接" class="headerlink" title="添加链接"></a>添加链接</h3><p>在主题配置文件中找到<code>social</code>属性，在其下方添加社交链接，其格式为：</p>
-<pre><code>社交平台名称：链接
-</code></pre><p>笔者添加的内容如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_30.png" alt="添加社交链接"></p>
-<h3 id="添加链接图标"><a href="#添加链接图标" class="headerlink" title="添加链接图标"></a>添加链接图标</h3><p>读者们可根据自己喜好，启用显示链接的图标，链接的图标全部来自于<a href="https://fortawesome.com/sets/font-awesome" target="_blank" rel="external">Font Awesome</a>，其配置方式也很简单，在主题配置文件中找到<code>social_icons</code>，修改其状态值为<code>true</code>，然后配置对应链接的图标，其格式为：</p>
-<pre><code>社交平台名称: Font Awesome中的图标的名字（区分大小写）
-</code></pre><p>如下图所示：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_31.png" alt="添加链接图标"></p>
-<h2 id="添加友情链接功能"><a href="#添加友情链接功能" class="headerlink" title="添加友情链接功能"></a>添加友情链接功能</h2><p>这次搭建自己的Hexo博客参考了很多大牛的博客，很感谢他们，我想在自己的博客上添加他们的博客链接。接下来看一下如何实现这个功能：</p>
-<p>在主题配置文件中找到<code>links</code>属性，修改<code>links_title</code>属性的值为“友情链接”（也可以是其他文案），然后添加上好友的博客名称和博客地址，其格式如下：</p>
-<pre><code>博客名称: 博客链接
-</code></pre><p>如下是笔者的配置信息：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_32.png" alt="links配置"></p>
-<p>配置完成后部署Hexo，即可实现友情链接的效果，附图如下：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_28.png" alt="友情链接"></p>
-<h2 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h2><p>编辑<strong>主题配置文件</strong>，找到字段<code>avatar</code>，值设置成头像的链接地址。<br>其中，头像的链接地址可以是：</p>
-<table>
-<thead>
-<tr>
-<th>地址</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>完整的互联网 URL</td>
-<td><a href="https://balabala（就举个例子）" target="_blank" rel="external">https://balabala（就举个例子）</a></td>
-</tr>
-<tr>
-<td>站点内的地址</td>
-<td>/uploads/avatar.jpg - 需要将你的头像图片放置在 站点的 source/uploads/ （可能需要新建uploads目录）</td>
-</tr>
-<tr>
-<td></td>
-<td>/images/avatar.jpg - 需要将你的头像图片放置在 主题的 source/images/ 目录下</td>
-</tr>
-</tbody>
-</table>
-<p>头像设置示例：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_33.png" alt="头像设置"></p>
-<p>设置完，部署后，就可以看到头像：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_28.png" alt="头像"></p>
-<h2 id="编辑网站缩略图"><a href="#编辑网站缩略图" class="headerlink" title="编辑网站缩略图"></a>编辑网站缩略图</h2><p>在主题配置文件里，可以看到：</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_34.png" alt="缩略图配置"></p>
-<p>将图标命名为<code>favicon.ico</code>，然后将ico放进Hexo/source/即可。</p>
-<p><img src="/2017/03/30/hexo主题和添加评论、打赏、搜索、阅读量等功能/hexo_35.png" alt="网站缩略图"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在这里感谢原作者，真的很感谢，对我很有帮助，然后自己也添加了点自己的东西。</p>
-]]></content:encoded>
-      
-      <comments>http://yoursite.com/2017/03/30/hexo%E4%B8%BB%E9%A2%98%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E3%80%81%E6%89%93%E8%B5%8F%E3%80%81%E6%90%9C%E7%B4%A2%E3%80%81%E9%98%85%E8%AF%BB%E9%87%8F%E7%AD%89%E5%8A%9F%E8%83%BD/#disqus_thread</comments>
     </item>
     
   </channel>
