@@ -104,19 +104,22 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>另外几种一行多个命令的方法，前面说的管道，就是一种方法，echo hello|wall，虽然这不是简单执行那两个命令，不管怎样，这里确实是执行了echo 和wall两个命令，下面讲些其他能执行多个命令的方法。</p><br>
+		<p>;，分号隔开，这是最基本的，就是简单的执行完前者再执行后者，几条命令之间没有任何联系。</p><br>
+		<img src="image/semicolon.png"><br><br>
+		<p>||,&&，两种逻辑运算符，用来连接几个命令，逻辑运算是用来算真(true)假(false)之间的关系，在Shell里，命令的返回值都是数字，0表示执行成功，表示逻辑真，其他数字都代表执行失败，逻辑假。</p><br>
+		<p>||，或运算，左右两条命令有一条执行成功就返回真，如果前者执行成功，就不执行后者，因为已经可以返回真了。</p><br>
+		<img src="image/or.png"><br><br>
+		<p>&&，两者都是与运算，左右两条命令都执行成功才返回真，如果前者执行失败，就不执行后者，因为已经可以返回假了。</p><br>
+		<img src="image/and.png"><br><br>
+		<p>``，把别的命令的返回值作为命令的一部分，这个符号是反单引号，键盘上的tab键上方那个键，不是单引号，因为有点难看，所以通常用$()，效果一样。</p><br>
+		<img src="image/cat.png"><br><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

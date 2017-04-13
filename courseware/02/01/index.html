@@ -104,19 +104,30 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>BIOS+MBR</p><br>
+		<img src="image/bios.jpg"><br><br>
+		<p>MBR:	Master Boot Record</p>
+		<p>2011年以前的PC系统都采用传统的PC BIOS，这种BIOS的特点是使用主引导记录（MBR）。MBR分区定义每个扇区512字节，磁盘寻址32位地址，所能访问的磁盘容量最大是2.19TB（232 * 512byte）。Windows从MBR启动，因此每个MBR都限制在2.19TB。</p><br>
+		<img src="image/mbr1.png"><br><br>
+		<p>MBR：可以安装启动管理程序的地方，有446 bytes；分割表(partition table)记录整颗硬盘分割的状态，有64 bytes，其实所谓的分割只是针对那个64 bytes的分割表进行配置，硬盘默认的分割表仅能写入四组分割资讯，这四组分割资讯我们称为主要(Primary)或延伸(Extended)分割槽。</p><br>
+		<img src="image/mbr2.png"><br><br>
+		<p>如上图右下方那个区块有继续分割出五个分割槽， 这五个由扩展分配继续切出来的分割槽，就被称为逻辑分割槽(logical partition)简单的说，整个启动流程到操作系统之前的动作是这样的：</p>
+		<p>1.BIOS：启动主动运行的韧体，会认识第一个可启动的装置；</p>
+		<p>2.MBR：第一个可启动装置的第一个磁区内的主要启动记录区块，内含启动管理程序；</p>
+		<p>3.启动管理程序(boot loader)：一支可读取核心文件来运行的软件；</p>
+		<p>4.核心文件：开始操作系统的功能...</p><br>
+		<p>而boot loader的主要任务有：</p><br>
+		<p>提供菜单：使用者可以选择不同的启动项目，这也是多重启动的重要功能</p>
+		<p>加载核心文件：直接指向可启动的程序区段来开始操作系统</p>
+		<p>转交其他loader：将启动管理功能转交给其他loader负责</p><br>
+		<img src="image/mbr3.png"><br><br>
+		<p>在上图可以发现，MBR的启动管理程序提供两个菜单，菜单一(M1)可以直接加载Windows的核心文件来启动；菜单二(M2)则是将启动管理工作交给第二个分割槽的启动磁区(boot sector)。当使用者在启动的时候选择菜单二时， 那么整个启动管理工作就会交给第二分割槽的启动管理程序了。 当第二个启动管理程序启动后，该启动管理程序内(上图中)仅有一个启动菜单，因此就能够使用Linux的核心文件来启动。</p><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 160px; text-indent: 0em;"><a href="http://baike.baidu.com/view/361.htm" target="_blank">度娘百科之BIOS</a></li>
+			<li style="line-height: 40px; text-align: center; width: 160px; text-indent: 0em;"><a href="http://baike.baidu.com/subview/9485/9079238.htm#viewPageContent" target="_blank">度娘百科之MBR</a></li><br>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

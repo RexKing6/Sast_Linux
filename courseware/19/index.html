@@ -104,19 +104,26 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>gcc编译c/c++，强大的编译器，也是最常用的命令行编译器，我自己在Windows也是用gcc的移植版，mingw，到这一课，应该已经有办法在Linux上写点代码了吧，实在不行还可以在windows环境下写完了再上传到Linux，首先声明这里不是讲c语言，而是讲编译工具，来个hello.c，直接gcc hello.c就可以编译代码hello.c，默认生成文件名为a.out。</p><br>
+		<img src="image/hello.png"><br><br>
+		<p>加个参数-o表示指定生成的文件名。</p><br>
+		<img src="image/o.png"><br><br>
+		<p>加个参数--save-temps表示保留中间文件，预处理.i，编译.s，汇编.o，链接，可执行文件，以上四步是gcc编译生成一个程序的过程，可以一步一步分别执行，预处理是-E，处理#include和#define之类的#开头的行代码。</p><br>
+		<img src="image/E.png"><br><br>
+		<p>编译是-S，处理成汇编代码.s，汇编是-c，生成目标文件.o。</p><br>
+		<img src="image/Sc.png"><br><br>
+		<p>也有把这两步合起来称为编译的，但是要知道这是两步。</p>
+		<p>链接的话就不需要其他参数了，这一步是把目标文件最终处理成可执行程序，如果是多个濿代码编译成多个目标文件，也是在这一步合起来，有函数声明了没定义的话，也是这一步报错。</p><br>
+		<img src="image/link.png"><br>
+		<img src="image/gdb1.png"><br>
+		<img src="image/gdb2.png"><br>
+		<img src="image/gdb3.png"><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

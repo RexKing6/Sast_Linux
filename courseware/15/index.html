@@ -104,19 +104,35 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>强大的检索命令find，可以搜索指定目录下的满足各种条件的文件，
+并引用其他命令分别处理这些文件，直接find，默认查找当前目录。</p><br>
+		<img src="image/find1.png"><br><br>
+		<p>后面跟上目录，可以查找指定目录。</p><br>
+		<img src="image/find2.png"><br><br>
+		<p>然后是些用来筛选的选项参数，-name，对文件名进行筛选，支持通配符*。</p><br>
+		<pre>
+-regex 也是对文件名筛选，使用正则，
+	-perm 对权限筛选，
+	-mtime 对时间筛选，
+	-uid -gid 对文件所有者和所有组筛选，
+	-inum 对inode筛选，
+	-type 对文件类型筛选，
+	这些筛选的选项，我觉得还是到需要有时候再看看会比较好，
+	毕竟都是用着才会熟，而这些，我都没用过，，，
+
+	最重要的是，对这些文件执行命令，
+	-exec
+	find /etc -name "*.conf" -exec grep -H "DocumentRoot" {} \; 2>/dev/null
+	从-exec到\;为止表示一条命令，可以多条，
+	一对花括号代表每个找到的文件。
+		</pre>
+		<img src="image/find_exec.png"><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

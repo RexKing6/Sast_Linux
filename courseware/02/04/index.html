@@ -104,19 +104,26 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>在Linux上看，到这里还没讲安装Linux，所以自然是用远程控制的看看，首先是一个目录，/dev，先来看看这个目录下面的东西。</p><br>
+		<img src="image/dev1.png"><br><br>
+		<p>dev是device（设备）的缩写，这下面的一个个文件，其实是一个个设备，比如各种的字符设备(stdin,tty)，块设备(loop,xvda)，硬盘都是块设备，以文件的形式放在这/dev目录下，而这文件名，和硬盘的接口有关，上图中的硬盘是xvda，xvd开头的是虚拟机专用的虚拟接口，现在的电脑一般都是SATA接口，一般虚拟机默认创建的硬盘也是SATA接口，对应的文件名是sd开头，按顺序abcd，也就是第一块硬盘叫sda，第二块硬盘叫sdb，直接读写这些文件，就可以读写硬盘里的每一个字节。</p><br>
+		<img src="image/dev2.png"><br><br>
+		<p>有这些文件还不能看到硬盘里的文件，需要“挂载”(mount)，比如插入一个u盘，发现/dev/sdb是这个u盘，然后要看这个u盘的内容，mount，/dev/sdb，/mnt/u，通过这样一条命令就可以挂载u盘到/mnt/u，然后就能在这个文件夹里看到u盘中的东西，有的Linux发行版为了方便，会自动挂载，比如ubuntu，会自动挂载到/media目录下，卸载是umount，挂载也可以把正常的目录挂载到另一个目录，加参数--bind，直接输入mount可以看到所有的挂载的情况，什么设备挂载到什么地方包括文件系统以及特殊的选项，都会输出。</p><br>
+		<img src="image/mount1.png"><br><br>
+		<p>因为挂载不只是可以将磁盘挂载到目录，所以这里会有些看不懂的并不是磁盘的挂载的信息。</p><br>
+		<p>然后说一个命令，lsblk，ls是list的意思，ls开头的命令都是列出某些东西，lsblk是list block device，列出块设备，能看到所有硬盘u盘之类的，包括每个分区，这里有它们的名字(name)就是在/dev/目录下的文件名，设备号(MAJ:MIN)就是用两个数字代表那个设备，是否可移动(RM)是不是u盘之类的，在windows上也有显示“可移动磁盘”，大小(SIZE)只读(RO)，类型(TYPE)主要就是disk表示硬盘，part表示硬盘上的一个分区，挂载点(MOUNTPOINT)就是这个分区被挂载到了哪个目录。</p><br>
+		<img src="image/lsblk1.png"><br>
+		<img src="image/lsblk2.png"><br><br>
+		<p>那个loop是回环设备，简单的说就是用来把一个普通文件当成一个硬盘来使用，先不管。</p><br>
+		<p>还有个命令，fdisk，这命令一般权限是用不了的，我处理了一下能用了，所以同学们可以试试，这东西是用来给硬盘分区的，自然也可以用来查看硬盘上的分区的情况。</p>
+		<p>fdisk -l</p><br>
+		<img src="image/fdisk1.png"><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

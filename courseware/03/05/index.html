@@ -104,19 +104,20 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>脚本，首先是Run Commands，直译是运行命令，感觉有点奇怪，怎么翻译都奇怪，其实这个和自动执行的脚本有关，比如bash，每次启动bash，都会自动运行家目录下的.bashrc这个文件里的第一行命令，这个rc就是Run Commands，这两个字母还是比较常用的，各种程序的自动运行的脚本都喜欢带这两个字母，比如zsh的自动运行脚本叫.zshrc，vim的自动运行脚本叫.vimrc，linux图形界面的自运行脚本叫.xinitrc，这些文件里放着相应程序的配置或者说初始化信息，前面说的alias和变量，就要在这里设置才能保证每次都能用的，否则alias和其他变量的设置都是一次性的。</p><br>
+		<img src="image/alias.png"><br><br>
+		<p>对于Shell，主要有两种情况会调用这个.bashrc，这里就不说那些“交互式shell和非交互式shell”这些看起来高大上的话了，一种是就比如ssh远程控制，你们现在用putty之类的登陆上来，就会启动Shell，这时就会自动运行.profile，然而在.profile里面又有一句 . "$HOME/.bashrc"调用.bashrc，另一种就是，登陆了以后，输入命令bash，也会启动Shell，这时直接自动运行.bashrc。</p><br>
+		<img src="image/profile.png"><br><br>
+		<p>脚本的使用，脚本可以简单看成一堆命令的集合，把一堆命令写进一个文件，需要的时候执行这个脚本就可以自动运行那一堆命令，下图是写个脚本用来编译一个c语言程序。</p><br>
+		<img src="image/script.png"><br><br>
+		<p>上图里的sh script.sh是让一个新的Shell去执行这个脚本，如果是想在脚本里设置变量，就不能这样调用，因为新的Shell执行脚本设置了变量，但是和当前的Shell无关，要用当前的Shell去执行脚本，需要另一个内部命令，source，还有个内部命令.小数点，和source功能一样。</p><br>
+		<img src="image/script_source.png"><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

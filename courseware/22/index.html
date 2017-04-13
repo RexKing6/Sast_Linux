@@ -104,19 +104,29 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>ftp知道吧，sftp是基于ssh，也就是说服务器不需要其他设置，只要能用ssh登录上，就能用sftp上传下载文件，是用和ftp相同的命令来做ftp能做的事，先说个图形界面的工具吧，filezilla，而且这是开源免费的，windows,linux,mac都支持，windows版的下载 用法简单介绍，图形界面的工具，应该不用多说的，进站点管理器。</p><br>
+		<img src="image/filezilla.png"><br><br>
+		<p>添加个站点，注意选sftp，用自己的用户名密码登陆。</p><br>
+		<img src="image/addhost.png"><br><br>
+		<p>然后就连上了，左边是自己电脑里的文件，右边上服务器上的文件，上传下载就拖来拖去就好。</p><br>
+		<img src="image/connect.png"><br><br>
+		<p>然后是个命令行的sftp工具。</p><br>
+		<img src="image/lftp1.png"><br>
+		<img src="image/lftp2.png"><br>
+		<img src="image/lftphelp.png"><br><br>
+		<p>命令挺多的，基本和ftp一样，ls,rm,mv,mkdir,rmdir,cd,lcd,pwd,lpwd，其实都是linux命令，那些l开头的是因为要分成远程的本地两种，l开头的是本地的，还有感叹号!开头表示执行shell命令，比如!ls就是在本地执行ls列出本地文件，之前说过，cd这种命令是不能用外部命令实现的，要改变本地的工作目录只能是lcd不能是!cd。</p><br>
+		<img src="image/cd.png"><br><br>
+		<p>上传文件是put，下载文件是get。</p><br>
+		<img src="image/get.png"><br>
+		<img src="image/put.png"><br><br>
+		<p>lftp有个ftp没有的，用来传整个文件夹的，mirror，如果不是经常工作在命令行下，主要还是用有图形界面的filezilla，lftp简单了解，需要的时候能用的就好，不会用也要能help，通过sftp，就可以在linux服务器上传下载文件，如果自己有个Linux服务器，要安装配置什么的时候，如果无法直接ssh在服务器上完成，可以试试在本地写完后再通过sftp上传到服务器。</p><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="http://jingyan.baidu.com/article/b2c186c8ee1116c46ef6ffc8.html" target="_blank">外链:ftp命令</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="http://blog.chinaunix.net/uid-20615025-id-29835.html" target="_blank">外链:lftp命令</a></li>
+			<br>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

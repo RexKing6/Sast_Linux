@@ -104,19 +104,21 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>VNC，Windows下利用VNCviewer，通过VNC远程控制Linux，Linux通常不用VNC远程控制，因为传输图像的数据量就比较大了，对网速的要求就比较大了，网速不够的话，控制起来就是卡卡的，所以我手头上的vps并没有搭VNC服务，也没有图形界面，下面用来测试的是在学校一个服务器上建的虚拟机，这虚拟机我是用来挂着vpn服务器的，平时有人用，所以不能乱搞，通过vnc远程控制这个虚拟机，有两种不同的情况，但是有一点，多人登陆的话，看到的控制的，都是一样的，下面如果需要帐号密码，都是aoeiuv第一个，虚拟机本身提供的vnc服务，是真的像显示器一样能看到这个系统，包括开关机画面什么的，都能看到，地址是180.209.64.41，端口是15900。</p><br>
+		<img src="image/vncviewer1.png"><br>
+		<img src="image/vncviewer2.png"><br>
+		<img src="image/vnc4.png"><br><br>
+		<p>这样就能看到桌面了，而且这不是丑，这叫简洁，这个桌面是openbox，还有其他很多种华丽的桌面，Linux这个换桌面环境和Windows换主题是完全不一样的，不同桌面环境看上去是天差地别的。</p><br>
+		<p>第二个，Linux上运行一个vnc服务端程序，地址是180.209.64.41，端口是15901，这样和vnc依赖这个服务端程序，通常只是提供一个桌面环境的入口，连接进来就是桌面。</p><br>
+		<img src="image/vncviewer3.png"><br><br>
+		<p>VNC看看就行了，主要还是用SSH，Linux毕竟还是用字符界面，还有个叫“实验楼”的自学网站，有提供实践环境，随便选个免费课程就会提供个一小时的Linux，直接就是在网页上通过vnc控制的，可以注册试试。</p><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="01">实验楼介绍</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="https://www.shiyanlou.com/" target="_blank">实验楼</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="http://www.oschina.net/news/53152/top-7-desktop-environment-linux" target="_blank">Linux七大桌面</a></li><br>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

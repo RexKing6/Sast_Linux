@@ -104,19 +104,25 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>PS1，回到对Linux最初的印象。</p><br>
+		<img src="image/sh.png"><br><br>
+		<p>其实就是一个黑框，往里面输入一个一个命令，做什么事都是一个个命令，每个命令前面通常有个$或#，为什么是黑白的呢，因为最初的sh(Shell)是不支持颜色的，当然，第一节课同学看到的是这样花花绿绿的。</p><br>
+		<img src="image/putty5.png"><br><br>
+		<p>除了命令的输出可以带颜色以外，命令前面那个“[0aoeiuv@iZ28yt38sl7Z:~]”也可以带颜色的，这里讲的就是前面那一串东西，首先，那个花花绿绿的是我自己设置的，先看看默认的，通过“bash -norc”可以看到bash默认的情况，其实也很简陋。</p><br>
+		<img src="image/bash_norc.png"><br><br>
+		<p>不管怎样，那个字符串都是存在一个名叫“PS1”的变量里的，通过“echo $PS1”可以看见这个变量的内容。</p><br>
+		<img src="image/echo_ps1.png"><br><br>
+		<p>直接改PS1这个变量就可以看到前面显示的字符串立马就变了。</p><br>
+		<img src="image/ps1.png"><br><br>
+		<p>除了直接显示，PS1还有各种高级用法，可以在bash的手册里找到说明，man bash，然后搜索PS1，输入“/PS1”，然后按n表示下一个，直到下图的位置。</p><br>
+		<img src="image/man_bash_ps1.png"><br><br>
+		<p>要能简单看懂英文，看不懂的可以直接试试，因为太多，这里只介绍几个，\u表示用户名，\h表示主机名，\w表示路径，至于颜色，说起来就比较复杂了，有兴趣可以看看或者直接模仿我的PS1，简单的说，换颜色也是通过输出字符实现的，是一个转义字符\e加几个普通字符，然后自己随便改改PS1看看输出的是什么，最好可以把输出保存起来，做个纪念。</p><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 160px; text-indent: 0em;"><a href="http://blog.sina.com.cn/s/blog_6268defa0100wijx.html" target="_blank">外链:PS1设置</a></li><br>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

@@ -104,19 +104,30 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>链接的意义，有时候有的文件我们可能希望他们的内容是一样的，当其中一个文件改变时，另一个也一样改变，也就是读取出来要完全一样，首先说一下，这东西是依赖文件系统的，Linux常用的文件系统ext支持，windows的fat不支持，ntfs在win7以后有mklink，在Linux上不支持，所以先介绍一个在ext里代表不同文件的东西，inode，inode是一个数字，一个ext分区里，所有的文件和文件夹都有且仅有一个inode，inode决定这个文件在硬盘中存储的位置，相同的inode表示文件存在硬盘的同一位置，不同的inode表示文件存在硬盘的不同位置，ls -i可以看见文件的inode。</p><br>
+		<img src="image/lsi.png"><br><br>
+		<p>还有个更详细的命令，也可以看到inode，stat。</p><br>
+		<img src="image/stat.png"><br><br>
+		<p>ln命令默认产生硬链接(hard link)。</p><br>
+		<img src="image/ln.png"><br><br>
+		<p>产生的硬链接和源文件没有区别，inode相同，除了都存在硬盘里的同一位置，没有从属关系，没有谁是谁的链接的关系，两者都是常规文件，两者都被删除以后，这部分数据才算是被删除了，才有可能被新的文件覆盖，要注意的是，文件夹不能建立硬链接，硬链接不能跨硬盘，跨分区，stat命令可以看出有多少个文件链接到相同的位置，正常文件的Links数目是1，就是文件本身。</p><br>
+		<img src="image/lnstat.png"><br><br>
+		<p>ln -s产生软链接(符号链接)(symbolic link)</p><br>
+		<img src="image/lns.png"><br><br>
+		<p>对软链接的读写都会作用到源文件上，这点从效果上看，和硬链接一样，但是有很大的本质不同，首先，产生的软链接和原文件是"不同"的文件，它们的inode是不同的，代表它们是存在硬盘上不同位置的文件，其次，软链接不是常规文件，文件类型那个位置写的是l，是软链接专用的文件类型，大小也和原文件无关，这种类型专门是用来指向另一个文件的，软链接文件存着对方的路径(相对绝对路径都可以，甚至存不存在都可以)，也只是简单的存一个路径，读写的时候直接读写软链接指向的文件，练习，回去做的，下图几个命令，求结果这4个文件读出来的内容，先猜一下结果，再尝试一下。</p><br>
+		<img src="image/q.png"><br><br>
+		<p>复制软链接，硬链接是普通文件，正常使用没问题，但软链接不同，正常复制是通过读和写，但是软链接读出来的是它指向的文件的内容，写生成的文件也只会是常规文件，因此cp命令有个参数可以用来复制软链接，但是要注意，软链接如果是相对路径，复制到其他目录后，相对路径的起点也变了。</p>
+		<p>cp -l</p><br>
+		<img src="image/cpl.png"><br><br>
+		<p>这个参数不只可以用来复制软链接，有名管道也可以，其实cp -l和ln产生硬链接的效果是一样的。</p><br>
+		<p>根据inode找文件，参数-inum后面跟上inode就可以筛选出指定inode的文件。</p><br>
+		<img src="image/find.png"><br><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

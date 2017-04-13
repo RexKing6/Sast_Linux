@@ -104,19 +104,20 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>稍稍深入一点认识Shell</p>
+		<p>Shell地位相当于windows上的cmd，或者说是PowerShell，首先Shell本身也是一个程序，或者说只是一个程序，Shell的英文直译是“壳”，是相对于“核”的，“核”是看不见的然而“壳”是看的见的，也就是Shell其实就是操纵Linux的人直接控制的东西，说白了就是那个输入命令的界面，我们的一个一个命令实际上都是传给Shell，然后由Shell产生新进程去调用其他程序，进入各种SHELL时都会先执行一些脚本，比如bash会执行家目录下的.bashrc，也就是~/.bashrc，zsh也有类似的.zshrc，这个“rc”是“run commands”，就是运行一堆命令的意思，可以在这文件里写上每次都要运行的命令。</p><br>
+		<img src="image/bashrc.png"><br><br>
+		<p>因为Shell这个程序相当常用，所以不同习惯的人开发出了不同的Shell，默认最基本的sh(Shell)，自带，最常见最常用的bash(Bourne-Again SHell)，语法接近c语言的csh(C Shell)，据说比bash强大的zsh(Z Shell)，各有特色，手感完全不同，有兴趣可以都试试，主要讲的是bash。</p><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="01">PS1</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="02">内部命令</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="03">alias</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="04">变量</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="05">脚本</a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="06">HotKey</a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

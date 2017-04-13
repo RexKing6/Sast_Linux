@@ -104,19 +104,44 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>grep,sed,awk,找匹配的文字，这些命令都是比较强大的，尤其是组合起来，这里只讲最常用的用法和参数，多用man自学，比如嘛，有个代码源文件。</p>
+		<pre>
+	#include <stdio.h>
+		int main(int argc, char **argv)
+		{
+			int i=0;
+			printf("%d\n",i);
+			return 0;
+		}
+		</pre>
+		<p>放在/tmp/int.c，要找里面出现int的行，可以这样，grep "int" /tmp/int.c。</p><br>
+		<img src="image/grep1.png"><br><br>
+		<p>常用的参数也就三个，-H输出时带文件名，-i忽略大小写，-v是颠倒，匹配的不输出，不匹配的才输出，这三个参数自己找个文件试试。</p><br>
+		<p>然后，如果懂正则表达式，sed是个很强大的东西，比如嘛，上面的输入的printf那一行不是我要的，可以用正则筛选，grep加个-e参数也可以支持正则，可以简单搜索。</p>
+		<code>grep -e "\<int\>" int.c</code><br>
+		<code>sed -n "/\<int\>/p" int.c</code><br><br>
+		<img src="image/grep_sed.png"><br><br>
+		<p>sed用法比较复杂，而且很多样，最基本的用法是，sed "/正则/操作" 文件，以上面的命令为例，p是print打印，就是把匹配的行打印一遍，至于-n，是因为sed默认会把整个文件打印一遍，加-n就不打印整个文件。</p><br>
+		<img src="image/sed1.png"><br><br>
+		<p>比起搜索，sed更常用于正则替换，替换是s，sed "/正则1/s/正则2/新字符串/选项" 文件，第一个/正则1/表示需要替换的行，可以不写，表示所有行都替换，最后的选项就说一个g，表示整行所有匹配正则2的字符串都替换了，没有g是只替换行里第一个匹配的。</p><br>
+		<img src="image/seds.png"><br><br>
+		<p>还有个sed的参数-i，表示替换后直接写入文件，而不是打印出来。</p><br>
+		<img src="image/sedi.png"><br><br>
+		<p>awk，这个最强大，强大到可以当成脚本语言了，但我们只学最基本的功能，就是筛选出一行字符串里的一部分，首先说个文件，/etc/passwd，这里存着每个用户的名字，id，家目录，默认Shell之类的。</p><br>
+		<img src="image/passwd.png"><br><br>
+		<p>然后来试试awk。</p>
+		<p>awk -F ":" '{print $1,$5}' /etc/passwd</p><br>
+		<img src="image/awk.png"><br><br>
+		<p>-F参数表示用什么分隔字符串，默认是空格，print后面跟上要输出的字符串，$加数字表示行里的第几部分，也可以插入字符串，比如：</p>
+		<p>awk -F ":" '{print "学号为",$1,"的同学是",$5}' /etc/passwd</p><br>
+		<img src="image/awk2.png"><br><br>
+		<p>关于单引号和双引号，其实说过了，单引号里面的特殊符号不用转义，比如这里可以改成双引号，"{print \$1,\$5}"，如果要将这些组合起来多次筛选，就需要Shell的管道，下节课介绍。</p><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

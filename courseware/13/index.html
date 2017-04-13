@@ -104,19 +104,109 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>1.&:将命令扔到后台运行</p><br>
+		<img src="image/&_1.png"><br><br>
+		<p>出来的[1]是jobnumber,8005是PID,是该进程的ID,但该命令运行完后,会在屏幕显示Done,虽然命令是在后台运行的,但是它输出的东西依然会显示在屏幕上,然而并不会影响你的输入</p><br>
+		<img src="image/&_2.png"><br><br>
+		<p>比如上图的ls还是照常输出了，如果被这样满屏的东西亮瞎了狗眼,该怎么办呢？上节课的重定向都白学了吗？</p><br>
+		<p>2.[ctrl]+z:将目前的工作丢到后台并且暂停</p><br>
+		<img src="image/^z.png"><br><br>
+		<pre>
+3.jobs:观察目前的后台工作状态
+	jobs [-lrs]
+	选项与参数：
+	-l ：除了列出 job number 与命令串之外，同时列出 PID 的号码；
+	-r ：仅列出正在背景 run 的工作；
+	-s ：仅列出正在背景当中暂停 (stop) 的工作
+		</pre>
+		<img src="image/jobs.png"><br><br>
+		<pre>
+4.fg:将后台工作拿到当前来处理
+	fg %jobnumber
+	选项与参数：
+	%jobnumber:其实%有无都行
+		</pre>
+		<img src="image/fg.png"><br><br>
+		<pre>
+5.bg:在后台的进程状态变成运行中
+	bg %jobnumber
+	选项与参数:
+	%jobnumber:同上
+
+	6.kill:管理背景当中的工作
+	kill -signal %jobnumber
+	kill -signal PID
+	kill -l
+	选项与参数：
+	-l ：列出目前kill能够使用的讯号(signal)
+	signal ：讯号
+	-1 ：重新读取一次参数的配置档
+	-2 ：代表与由键盘输入 [ctrl]-c 同样的动作
+	-9 ：立刻强制删除一个进程
+	-15：以正常的程序方式终止一项工作进程
+		</pre>
+		<img src="image/kill.png"><br><br>
+		<pre>
+7.ps:将某个时间点的程序运行情况显示出来
+	ps aux :观察系统所有的程序数据
+	ps -lA :观察所有系统的数据
+	ps axjf :连同部分程序树状态
+		</pre>
+		<img src="image/ps aux.png"><br><br>
+		<pre>
+8.top:动态观察程序的变化
+	top [-d 数字] | top [-bnp]
+	选项与参数：
+	-d ：接秒数,默认是5秒
+	-b ：以批量的方式运行
+	-n ：与-b搭配,运行多少次
+	-p ：指定PID
+	在 top 运行过程当中可以使用的按键命令：
+	? ：显示在top当中可以输入的按键命令
+	P ：以CPU的使用资源排序显示
+	M ：以Memory的使用资源排序显示
+	N ：以PID来排序
+	T ：由该Process使用的CPU时间累积(TIME+)排序
+	k ：给予某个PID一个讯号(signal)
+	r ：给予某个PID重新制订一个nice
+	q ：离开top
+	这个自己动手试试比较直观
+
+	9.pstree [-A|U] [-up]
+	选项与参数：
+	-A ：各程序树之间的连接以 ASCII 字节来连接
+	-U ：各程序树之间的连接以万国码的字节来连接
+	-p ：并同时列出每个 process 的 PID；
+	-u ：并同时列出每个 process 的所属帐号名称。
+		</pre>
+		<img src="image/pstree_1.png"><br>
+		<img src="image/pstree_2.png"><br><br>
+		<pre>
+10.killall [-iIe] [command name]
+	选项与参数：
+	-i :interactive,若需要删除时,会出现提示
+	-I :忽略大小写
+
+	11.free:观察内存使用情况
+		</pre>
+		<img src="image/free.png"><br><br>
+		<pre>
+12.uname:查阅系统与核心相关信息
+	uname [-asrmi]
+	选项与参数：
+	-a ：所有系统相关的信息，包括底下的数据都会被列出来
+	-s ：系统核心名称
+	-r ：核心的版本
+	-m ：硬件名称
+	-i ：硬件的平台
+		</pre>
+		<img src="image/uname.png"><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">

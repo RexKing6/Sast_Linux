@@ -104,19 +104,29 @@
 			<li><a href="http://linux.vbird.org/" target="_blank">鸟哥私房菜</a></li>
 		</ul>
 	</div>
-	<div id="main" style="position: absolute; top: 180px; left: 2em;text-align: left; text-indent: 2em; width: 1000px;">
-		<p>课表什么的不用在意，未必严格按课表的来，一般以这里为准，上课大家都看这网页，就不用一直看投影了。</p>
-		<p>毕竟一周就一节课，对于想学linux的同学，这是不够学的，所以，这里打算只讲些科普级的，大家都应该学的，搞IT哪怕不走Linux路线也要懂的东西，也就是常识性的，如果顺利的话，还可能教些相关的别的，比如Linux C语言编程之类的。</p>
-		<p>对于真想学Linux走这条路的，一定要常去活动室，一起交流学习，只一周一节是绝对不够的。</p><br>
-		<p>可以不需要安装个Linux系统，第一节课的远程控制就是在Windows下远程控制Linux，有了个Linux下面的课就实践了，未必要自己安装Linux。</p>
-		<p>所以建议是买个云服务器，比如我用的阿里云10元/月。</p>
-		<p>双系统的话，不管是装哪种Linux，折腾都是少不了的，愿意折腾的装，第二节课讲的东西和装系统有关，由于这些偏硬件，暂时没人系统地学这些，所以只能教些常见的有需要的，如果有遇到具体的问题可以来一起研究。<br><br>
-		<p>要结课了，这学期就这样了，下学期估计还有，这节做个结尾总结之类的，大概评估下每个人的学习情况，主要是些简单的命令。</p>
-	    <p>Linux还是要学的，愿意的话最好自己动手安装个Linux的系统，在使用中学习，有需求才有学习的动力。</p>
-	    <p>但是之后大家可以进入讨厌的期末复习状态了，技术可以以后学，科不能挂。</p>
-	</div>
-	<div id="tux" style="position: absolute; right: 80px;top: 180px;">
-		<img src="/image/Tux.jpg">
+	<div id="main" style="position: absolute; top: 180px; left: 2em; right: 2em;text-align: left; text-indent: 2em;">
+	<!--文本添加处-->
+		<p>服务器聊天命令，到这里，我已经给大家都开了各自的账号，同时在登陆的话，可以互相聊天的，who,w,tty,这些用来确定身份，wall,write,mesg,这些用来聊天。</p><br>
+		<p>who,w,tty,</p><br>
+		<img src="image/who.png"><br>
+		<img src="image/tty.png"><br>
+		<p>who和w命令是看别人的登陆信息，第一列是用户名，第二列是tty，tty命令是看自己的tty，tty简单说明一下，就是每个登陆，都有一个tty，键盘输入就是输入到这个tty，屏幕输出就是从这个tty读。</p><br>
+		<img src="image/echotty.png"><br><br>
+		<p>上图有重定向，后面会说，现在是要明白，把数据直接写入一个tty设备文件，就会在相应的用户的屏幕上看到输出，但是一般用户是没有权限直接写这些设备文件的，所以Linux提供两个命令用来聊天，可惜不支持中文，wall，警告，这个命令是用来向所有人广播消息，所有人都能收到，输入完成后用ctrl+d表示输入结束，然后就会广播出去了。</p><br>
+		<img src="image/wall.png"><br><br>
+		<p>write，和一个指定的用户聊天。</p><br>
+		<img src="image/write.png"><br><br>
+		<p>和上面的wall不同的是，write是每行发送一次，也就是敲一下驾车就发送一次，一行没结束时也可以用ctrl-D清空缓冲也能发送出去。</p>
+		<p>mesg</p>
+		<p>mesg n，可以拒绝接收write消息，相应的mesg y，就能接收，默认就是接收。</p><br>
+		<p>其实write很好实现，下午临时写了个类似的，支持中文的。</p><br>
+		<img src="image/talk.png"><br><br>
+		<p>但是支持中文不安全，因为能输中文也就能输乱码，可以给强行给别人输乱码，导致别人终端坏掉。</p><br>
+		<img src="image/talkbad1.png"><br>
+		<ul>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/01"></a></li>
+			<li style="line-height: 40px; text-align: center; width: 120px; text-indent: 0em;"><a href="/courseware/00/02"></a></li>
+		</ul>
 	</div>
 	<div class="recordcode">
 		<a href="http://www.beian.gov.cn/" title="链接至信息产业部备案管理系统" target="_blank">
